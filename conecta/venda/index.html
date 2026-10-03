@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CONECTA · Os Mirandas</title>
+<meta name="description" content="CONECTA: uma experiência para casais que empreendem juntos saírem por algumas horas do modo sócios e voltarem a prestar atenção um no outro.">
+<!-- Página de venda do CONECTA · v3 · estrutura inspirada na referência Black Boutique (Os Formagios), vestida com a identidade Os Mirandas -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap">
+<style>
+/* Layout: topo escuro com a foto do casal num arco · faixas creme alternando foto e texto (01–05) · faixa verde com a oferta ·
+   faixa sálvia com o "combinado" em papel · perguntas · fecho dividido foto/texto · rodapé escuro.
+   Visual único de marca, deliberadamente sem modo escuro alternativo: as cores estão todas definidas aqui. */
+:root{
+  color-scheme:light;
+  --noite:#14241c; --verde:#1f3a2e; --verde-2:#2c4a3c;
+  --creme:#f3efe5; --papel:#faf7f1; --salvia:#b7c3a6; --salvia-clara:#d3dcc4; --salvia-esc:#56664b;
+  --texto:#2b2c28; --suave:#5f5b52; --linha:#d9d1c1; --linha-esc:rgb(243 239 229/.16); --claro-suave:rgb(243 239 229/.72);
+  --f-disp:Montserrat,"Segoe UI",Helvetica,Arial,sans-serif;
+  --f-serif:"Playfair Display",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--creme);color:var(--texto);font:16px/1.7 var(--f-disp);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+.w{max-width:1140px;margin:0 auto;padding-inline:clamp(18px,5vw,56px)}
+h1,h2,h3{font-weight:500;text-wrap:balance}
+em{font-family:var(--f-serif);font-style:italic;font-weight:400;letter-spacing:0}
+p{text-wrap:pretty}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offset:3px}
+
+.rot{display:flex;align-items:center;gap:10px;font:600 11.5px/1.4 var(--f-disp);letter-spacing:.2em;text-transform:uppercase}
+.rot::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+.num{font:600 11px/1 var(--f-disp);letter-spacing:.22em;text-transform:uppercase;color:var(--salvia-esc)}
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:60px;padding:0 24px;border-radius:2px;
+  background:var(--salvia-clara);color:var(--verde);font:600 15px/1.2 var(--f-disp);text-decoration:none;transition:background .2s}
+.btn:hover{background:var(--salvia)}
+.btn span{font-size:18px}
+.seta{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--linha);
+  color:var(--verde);font:600 14px/1.3 var(--f-disp);text-decoration:none}
+.seta span{font-size:18px;color:var(--salvia-esc)}
+
+/* ---------- topo escuro ---------- */
+.topo{background:var(--noite);color:var(--creme)}
+.barra{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:24px;border-bottom:1px solid var(--linha-esc)}
+.marca{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--creme)}
+.marca b{font:500 26px/1 var(--f-serif);letter-spacing:.02em}
+.marca small{display:block;font:600 11.5px/1.3 var(--f-disp);letter-spacing:.2em;text-transform:uppercase}
+.marca small i{display:block;font-style:normal;font-weight:500;font-size:10px;color:var(--salvia)}
+.barra .link{color:var(--creme);text-decoration:none;font:500 14px/1 var(--f-disp);display:flex;gap:14px;align-items:center}
+.barra .link span{color:var(--salvia)}
+.hero{display:grid;gap:clamp(36px,5vw,64px);align-items:center;padding-block:clamp(40px,6vw,72px)}
+@media(min-width:900px){.hero{grid-template-columns:1.05fr .95fr}}
+.hero>div{min-width:0}
+.hero .rot{color:var(--creme)}
+.hero .rot::before{background:var(--salvia)}
+.hero h1{font-family:var(--f-disp);font-weight:500;font-size:clamp(42px,6vw,76px);line-height:1.02;letter-spacing:-.045em;margin-top:26px;color:var(--creme)}
+.hero h1 em{color:var(--salvia);font-size:1.06em}
+.hero h2{font:400 clamp(26px,3vw,38px)/1.15 var(--f-serif);margin-top:18px;color:var(--creme)}
+.hero p.sub{color:var(--claro-suave);max-width:28em;margin-top:22px;font-size:17px}
+.compra{display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;margin-top:34px}
+.preco{color:var(--creme)}
+.preco b{display:block;font:400 40px/1 var(--f-serif)}
+.preco span{display:block;font-size:13px;color:var(--claro-suave);margin-top:6px}
+.arco{position:relative;max-width:480px;margin-inline:auto;width:100%;padding:14px}
+.arco::before{content:"";position:absolute;inset:0;border:1px solid var(--linha-esc);border-radius:999px 999px 0 0}
+.arco img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:999px 999px 0 0}
+.arco figcaption{position:absolute;left:44px;bottom:38px;color:var(--creme)}
+.arco figcaption b{display:block;font:italic 400 clamp(32px,4vw,44px)/1 var(--f-serif)}
+.arco figcaption small{display:block;margin-top:8px;font:600 10.5px/1 var(--f-disp);letter-spacing:.24em;text-transform:uppercase}
+.arco::after{content:"";position:absolute;left:14px;right:14px;bottom:14px;height:45%;background:linear-gradient(transparent,rgb(20 36 28/.75));pointer-events:none}
+.arco figcaption{z-index:2}
+.rodape-hero{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding-block:20px 26px;border-top:1px solid var(--linha-esc);
+  font:600 10.5px/1.4 var(--f-disp);letter-spacing:.2em;text-transform:uppercase;color:var(--claro-suave)}
+.rodape-hero a{color:var(--claro-suave);text-decoration:none}
+
+/* ---------- caminho ---------- */
+.caminho{padding-block:clamp(64px,8vw,104px)}
+.caminho .rot{color:var(--salvia-esc);font-size:11px}
+.caminho>.w>h2{font-family:var(--f-disp);font-size:clamp(34px,4.6vw,56px);line-height:1.04;letter-spacing:-.04em;color:var(--verde);margin-top:18px}
+.caminho h2 em{color:var(--salvia-esc)}
+.abas{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));margin-top:34px;border-block:1px solid var(--linha)}
+.abas a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 14px 14px 0;color:var(--texto);text-decoration:none;font-size:13.5px}
+.abas li+li a{padding-left:14px;border-left:1px solid var(--linha)}
+.abas a span{color:var(--salvia-esc)}
+.abas small{color:var(--salvia-esc);font-weight:600;margin-right:8px}
+.linha-exp{display:grid;gap:clamp(28px,5vw,64px);align-items:center;margin-top:clamp(56px,7vw,88px)}
+@media(min-width:860px){.linha-exp{grid-template-columns:1fr 1fr}.linha-exp.inv .foto{order:2}}
+.linha-exp>div{min-width:0}
+.foto{position:relative}
+.foto img{width:100%;aspect-ratio:5/4;object-fit:cover}
+.foto b{position:absolute;left:24px;bottom:22px;font:italic 400 clamp(30px,3.6vw,42px)/1 var(--f-serif);color:var(--creme);z-index:2}
+.foto::after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgb(20 36 28/.6))}
+.linha-exp h3{font-family:var(--f-disp);font-size:clamp(26px,2.8vw,34px);line-height:1.12;letter-spacing:-.03em;color:var(--verde);margin-top:14px}
+.linha-exp h3 em{color:var(--salvia-esc)}
+.linha-exp p{color:var(--suave);margin-top:16px;max-width:30em}
+.linha-exp .seta{margin-top:22px}
+
+/* ---------- oferta (faixa verde) ---------- */
+.oferta{background:var(--noite);color:var(--creme);padding-block:clamp(64px,8vw,104px)}
+.oferta .w{display:grid;gap:clamp(36px,5vw,72px);align-items:center}
+@media(min-width:860px){.oferta .w{grid-template-columns:1fr 1fr}}
+.oferta .w>div{min-width:0}
+.pilha{position:relative;max-width:440px;margin-inline:auto;width:100%;aspect-ratio:1/1.05}
+.pilha img{position:absolute;width:62%;aspect-ratio:894/1270;object-fit:cover;box-shadow:0 18px 40px -14px rgb(0 0 0/.55)}
+.pilha .p1{left:0;top:9%;rotate:-6deg}
+.pilha .p3{right:0;top:7%;rotate:6deg}
+.pilha .p2{left:19%;top:0;z-index:2}
+.oferta .num{color:var(--salvia)}
+.oferta h2{font:400 clamp(44px,5.6vw,72px)/1 var(--f-serif);margin-top:14px}
+.oferta h3{font-family:var(--f-disp);font-size:20px;line-height:1.35;margin-top:16px;color:var(--creme)}
+.inclui{list-style:none;margin-top:22px;border-top:1px solid var(--linha-esc)}
+.inclui li{padding:12px 0 12px 26px;border-bottom:1px solid var(--linha-esc);position:relative;color:var(--claro-suave);font-size:15px}
+.inclui li::before{content:"";position:absolute;left:0;top:23px;width:12px;height:3px;border-top:1px solid var(--creme);border-bottom:1px solid var(--salvia)}
+.oferta .compra{margin-top:28px}
+
+/* ---------- combinado (faixa sálvia) ---------- */
+.combinado{background:var(--salvia-clara);padding-block:clamp(64px,8vw,100px)}
+.combinado .w{display:grid;gap:clamp(36px,5vw,72px);align-items:center}
+@media(min-width:860px){.combinado .w{grid-template-columns:1fr 1fr}}
+.combinado .w>div{min-width:0}
+.combinado .num{color:var(--salvia-esc)}
+.combinado .ico{font-size:42px;line-height:1;color:var(--verde);margin:22px 0 10px}
+.combinado h2{font-family:var(--f-disp);font-size:clamp(28px,3.4vw,40px);line-height:1.12;letter-spacing:-.03em;color:var(--verde)}
+.combinado h2 em{color:var(--verde)}
+.combinado p{color:var(--salvia-esc);margin-top:16px;max-width:28em}
+.folha{background:var(--papel);padding:clamp(24px,4vw,40px);rotate:2deg;box-shadow:0 2px 4px rgb(31 58 46/.12),0 24px 50px -24px rgb(31 58 46/.45);max-width:470px;margin-inline:auto;width:100%}
+.folha .num{display:flex;justify-content:space-between}
+.folha blockquote{font:400 clamp(22px,2.4vw,28px)/1.25 var(--f-serif);color:var(--verde);margin-top:18px}
+.folha ol{list-style:none;margin-top:22px;border-top:1px solid var(--linha);counter-reset:p}
+.folha li{padding:12px 0;border-bottom:1px solid var(--linha);font-size:14.5px;color:var(--suave);counter-increment:p;display:flex;gap:14px}
+.folha li::before{content:counter(p,decimal-leading-zero);font:600 11px/2 var(--f-disp);letter-spacing:.15em;color:var(--salvia-esc)}
+
+/* ---------- perguntas ---------- */
+.faq{padding-block:clamp(64px,8vw,100px)}
+.faq .w{display:grid;gap:36px}
+@media(min-width:900px){.faq .w{grid-template-columns:.75fr 1.25fr;gap:64px;align-items:start}}
+.faq .w>div,.faq dl{min-width:0}
+.faq h2{font-family:var(--f-disp);font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-.035em;color:var(--verde);margin-top:14px}
+.faq dl{border-top:1px solid var(--verde)}
+.faq dl>div{padding:22px 0;border-bottom:1px solid var(--linha)}
+.faq dt{font:400 21px/1.3 var(--f-serif);color:var(--verde)}
+.faq dd{margin-top:8px;color:var(--suave)}
+
+/* ---------- fecho dividido ---------- */
+.fecho{display:grid;background:var(--papel)}
+@media(min-width:860px){.fecho{grid-template-columns:1fr 1fr}}
+.fecho img{width:100%;height:100%;min-height:320px;aspect-ratio:4/3;object-fit:cover}
+.fecho>div{min-width:0;padding:clamp(40px,6vw,88px) clamp(18px,5vw,64px);display:flex;flex-direction:column;justify-content:center}
+.fecho h2{font:400 clamp(28px,3.4vw,42px)/1.15 var(--f-serif);color:var(--verde);margin-top:16px}
+.fecho h2 em{color:var(--salvia-esc)}
+.fecho p{color:var(--suave);margin-top:16px}
+.fecho .btn{margin-top:28px;align-self:flex-start;background:var(--verde);color:var(--creme)}
+.fecho .btn:hover{background:var(--verde-2)}
+
+/* ---------- rodapé ---------- */
+.rodape{background:var(--noite);color:var(--claro-suave);font-size:13px}
+.rodape .w{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 28px;padding-block:30px 34px}
+.rodape a{color:var(--creme);text-decoration:none}
+
+/* ---------- novos trechos de copy ---------- */
+.hero p.ritual{margin-top:14px;color:var(--creme);font:italic 400 clamp(18px,1.8vw,21px)/1.4 var(--f-serif)}
+.tese{font:400 clamp(20px,2.2vw,26px)/1.4 var(--f-serif);color:var(--verde);max-width:34em;margin-top:22px}
+.oferta .apoio{color:var(--claro-suave);margin-top:10px;font-size:16px}
+.oferta .formato{color:var(--claro-suave);font-size:14px;margin-top:18px;max-width:30em}
+.combinado h2{font:400 clamp(34px,4.4vw,54px)/1.08 var(--f-serif);letter-spacing:-.01em}
+.combinado h2 span,.combinado h2 em{display:block}
+.combinado h2 em{color:var(--salvia-esc)}
+.combinado p.destaque{color:var(--verde);font-weight:500;margin-top:22px}
+
+/* ---------- animações (inspiradas na referência) ---------- */
+.topo{position:relative;overflow:hidden;isolation:isolate}
+.topo>.w{position:relative;z-index:1}
+.sinais{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.orbita{position:absolute;width:1100px;height:680px;right:-450px;top:180px;border:1px solid rgb(183 195 166/.09);border-radius:50%;rotate:-40deg;z-index:0;pointer-events:none}
+.brilho{position:absolute;width:600px;height:700px;right:-100px;top:-150px;background:radial-gradient(ellipse,rgb(86 102 75/.32),transparent 68%);z-index:-1;pointer-events:none}
+.arco{--rx:0deg;--ry:0deg;--py:0px;transform:translateY(var(--py)) perspective(1200px) rotateY(var(--rx)) rotateX(var(--ry));transition:transform .3s ease-out}
+.arco .luz{position:absolute;inset:14px;border-radius:999px 999px 0 0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgb(228 234 184/.16),transparent 50%);mix-blend-mode:screen;pointer-events:none;z-index:1}
+.arco .indice{position:absolute;right:-24px;top:90px;writing-mode:vertical-rl;font:600 8.5px/1 var(--f-disp);letter-spacing:.3em;text-transform:uppercase;color:var(--claro-suave)}
+.btn{transition:background .2s,transform .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn span,.seta span,.abas a span:last-child{transition:transform .2s}
+.btn:hover span{transform:translate(3px,3px)}
+.seta:hover span{transform:translate(4px,-4px)}
+.abas a{transition:background .2s}
+.abas a:hover{background:var(--salvia-clara)}
+.abas a:hover span:last-child{transform:translate(3px,3px)}
+.foto{overflow:hidden;--rx:0deg;--ry:0deg;transform:perspective(1200px) rotateY(var(--rx)) rotateX(var(--ry));transition:transform .4s ease-out}
+.foto img{filter:saturate(.55);transition:filter .7s,transform .9s}
+.foto:hover img{filter:saturate(1);transform:scale(1.04)}
+.rv-pronto .rv{opacity:.2;transform:translateY(24px);transition:opacity .75s,transform .75s}
+.rv-pronto .rv.visivel{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .rv{opacity:1!important;transform:none!important}
+}
+
+.fixo{display:none}
+@media(max-width:759px){
+  .barra .link,.hero .btn{display:none}
+  .fixo{display:block;position:fixed;inset:auto 0 0;z-index:5;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgb(20 36 28/.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+  .fixo .btn{width:100%}
+  body{padding-bottom:84px}
+  .abas li+li a{padding-left:0;border-left:0}
+  .abas li+li{border-top:1px solid var(--linha)}
+}
+</style>
+
+<header class="topo">
+  <canvas class="sinais" aria-hidden="true"></canvas><div class="orbita" aria-hidden="true"></div><div class="brilho" aria-hidden="true"></div>
+  <div class="w">
+    <div class="barra">
+      <a class="marca" href="#inicio"><b>OM.</b><small>Os Mirandas<i>Vida · Casamento · Negócios</i></small></a>
+      <a class="link" href="#oferta">Conheça o CONECTA <span>↗</span></a>
+    </div>
+    <div class="hero" id="inicio">
+      <div>
+        <p class="rot">CONECTA · o livro-experiência</p>
+        <h1>Uma pausa para quem divide a vida e o <em>negócio.</em></h1>
+        <h2>Voltem a olhar para o “nós”.</h2>
+        <p class="sub">Uma experiência guiada para casais que empreendem juntos saírem por algumas horas do modo sócios e voltarem a prestar atenção um no outro.</p>
+        <p class="sub ritual">Peguem papel e caneta. Guardem os celulares. Sentem perto.</p>
+        <div class="compra">
+          <a class="btn" href="#">Quero viver o CONECTA <span>↘</span></a>
+          <p class="preco"><b>R$ 37</b><span>Acesso imediato</span></p>
+        </div>
+      </div>
+      <figure class="arco" data-depth>
+        <img src="img/leandro-fernanda.webp" alt="Leandro e Fernanda Miranda sorrindo juntos num café, com duas xícaras na mesa">
+        <span class="luz" aria-hidden="true"></span>
+        <span class="indice" aria-hidden="true">01 / Presença</span>
+        <figcaption><b>Leandro &amp; Fernanda</b><small>Os Mirandas</small></figcaption>
+      </figure>
+    </div>
+    <div class="rodape-hero">
+      <span>Lembrar → Perceber → Escolher</span>
+      <a href="#caminho">Conheça o caminho ↓</a>
+      <span>17 anos casados e sócios</span>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="caminho" id="caminho"><div class="w">
+  <div class="rv">
+    <p class="rot">O que vocês vão viver</p>
+    <h2>Cinco experiências e <em>um acordo.</em></h2>
+    <p class="tese">Vocês podem estar construindo tanto juntos que, sem perceber, começaram a conversar mais sobre aquilo que construíram do que sobre quem está construindo.</p>
+  </div>
+  <ul class="abas">
+    <li><a href="#e1"><span><small>01</small>O Museu do Nós</span><span>↘</span></a></li>
+    <li><a href="#e2"><span><small>02</small>Onde foi parar a gente?</span><span>↘</span></a></li>
+    <li><a href="#e3"><span><small>03</small>Sócio ou cônjuge?</span><span>↘</span></a></li>
+    <li><a href="#e4"><span><small>04</small>O que eu queria…</span><span>↘</span></a></li>
+    <li><a href="#e5"><span><small>05</small>A vida que construímos</span><span>↘</span></a></li>
+  </ul>
+
+  <div class="linha-exp" id="e1">
+    <figure class="foto" data-depth><img src="img/vinil.jpg" alt="Disco de vinil no toca-discos, perto de uma janela" loading="lazy"><b>Lembrar.</b></figure>
+    <div class="rv">
+      <p class="num">01 / O Museu do Nós</p>
+      <h3>Acima de tudo que vocês administram, existe <em>uma história.</em></h3>
+      <p>A música que lembra o outro, o lugar que querem visitar de novo, a piada que só vocês entendem. Antes de qualquer tensão, memória e afeto.</p>
+      <a class="seta" href="#oferta">Quero viver isso juntos <span>↗</span></a>
+    </div>
+  </div>
+
+  <div class="linha-exp inv" id="e2">
+    <figure class="foto" data-depth><img src="img/cafe.jpg" alt="Xícara de café, caderno e celular sobre uma mesa de madeira" loading="lazy"><b>Perceber.</b></figure>
+    <div class="rv">
+      <p class="num">02 / Onde foi parar a gente?</p>
+      <h3>Às vezes não existe crise. Existe uma vida que ficou <em>cheia demais.</em></h3>
+      <p>A última semana de verdade, sem procurar culpados. Em que momentos alguém perceberia que vocês são marido e mulher, e não só dois sócios administrando uma vida?</p>
+      <a class="seta" href="#oferta">Quero viver isso juntos <span>↗</span></a>
+    </div>
+  </div>
+
+  <div class="linha-exp" id="e3">
+    <figure class="foto" data-depth><img src="img/escritorio.jpg" alt="Mesa de trabalho com notebook, caderno aberto e caneta" loading="lazy"><b>Diferenciar.</b></figure>
+    <div class="rv">
+      <p class="num">03 / Sócio ou cônjuge?</p>
+      <h3>A mesma pessoa, <em>dois papéis.</em></h3>
+      <p>Admirar o parceiro de vida e o parceiro de negócio. Conversar sobre o dinheiro da casa e da empresa. Combinar quem decide o quê, sem precisar decidir tudo juntos.</p>
+      <a class="seta" href="#oferta">Quero viver isso juntos <span>↗</span></a>
+    </div>
+  </div>
+
+  <div class="linha-exp inv" id="e4">
+    <figure class="foto" data-depth><img src="img/sala.jpg" alt="Duas canecas sobre a mesa de centro de uma sala iluminada" loading="lazy"><b>Falar e escutar.</b></figure>
+    <div class="rv">
+      <p class="num">04 / O que eu queria que você soubesse</p>
+      <h3>Algumas coisas só nunca encontraram <em>uma boa hora.</em></h3>
+      <p>“Ultimamente eu tenho me sentido…”, “Eu sinto falta de…”. E uma regra simples: antes de responder, dizer o que entendeu.</p>
+      <a class="seta" href="#oferta">Quero viver isso juntos <span>↗</span></a>
+    </div>
+  </div>
+
+  <div class="linha-exp" id="e5">
+    <figure class="foto" data-depth><img src="img/estrada.jpg" alt="Estrada vazia seguindo até o horizonte numa manhã enevoada" loading="lazy"><b>Sonhar.</b></figure>
+    <div class="rv">
+      <p class="num">05 / A vida que estamos construindo</p>
+      <h3>Crescer importa. Mas também importa saber <em>para que.</em></h3>
+      <p>O que significa prosperidade para vocês. O que a agenda revela ser o tesouro do casal. E, no fim, um acordo: o que vão proteger, parar e voltar a fazer.</p>
+      <a class="seta" href="#oferta">Quero viver isso juntos <span>↗</span></a>
+    </div>
+  </div>
+</div></section>
+
+<section class="oferta" id="oferta"><div class="w">
+  <div class="pilha" aria-hidden="true">
+    <img class="p1" src="img/musica.jpg" alt="">
+    <img class="p3" src="img/tesouro.jpg" alt="">
+    <img class="p2" src="img/capa.jpg" alt="">
+  </div>
+  <div class="rv">
+    <p class="num">O livro-experiência</p>
+    <h2>CONECTA</h2>
+    <h3>Uma experiência para dois.</h3>
+    <p class="apoio">Papel, caneta e algumas conversas que talvez a rotina esteja adiando.</p>
+    <ul class="inclui">
+      <li>Cinco experiências guiadas</li>
+      <li>Um acordo final do casal</li>
+      <li>Uma fronteira para proteger o casamento da empresa</li>
+      <li>Orientações para quando uma conversa esquentar</li>
+      <li>Uma carta de Leandro e Fernanda</li>
+    </ul>
+    <p class="formato">Vocês recebem o CONECTA em formato digital, com acesso imediato, para usar na tela ou imprimir.</p>
+    <div class="compra">
+      <a class="btn" href="#">Quero viver o CONECTA <span>↘</span></a>
+      <p class="preco"><b>R$ 37</b><span>Acesso imediato</span></p>
+    </div>
+  </div>
+</div></section>
+
+<section class="combinado"><div class="w">
+  <div class="rv">
+    <p class="num">Como funciona</p>
+    <p class="ico" aria-hidden="true">↗</p>
+    <h2><span>O CONECTA conduz.</span> <span>O papel recebe.</span> <em>O casal conversa.</em></h2>
+    <p class="destaque">O CONECTA não foi feito para ser lido. Foi feito para fazer vocês conversarem.</p>
+    <p>Sem questionário enviado, sem análise de ninguém, sem pontuação. As respostas ficam no papel de vocês.</p>
+  </div>
+  <div class="folha">
+    <p class="num"><span>O combinado</span><span>CONECTA</span></p>
+    <blockquote>Hoje não estamos aqui para descobrir quem está certo. Estamos aqui para prestar atenção um no outro.</blockquote>
+    <ol>
+      <li>Cada um escreve sozinho, sem mostrar.</li>
+      <li>O CONECTA avisa a hora de revelar.</li>
+      <li>Se a conversa engatar, fiquem nela. Dá para parar e continuar outro dia.</li>
+    </ol>
+  </div>
+</div></section>
+
+<section class="faq"><div class="w">
+  <div class="rv">
+    <p class="num">Perguntas</p>
+    <h2>Antes de começar.</h2>
+  </div>
+  <dl>
+    <div><dt>É um curso?</dt><dd>Não. O CONECTA não tem aulas, vídeos ou conteúdo para estudar. É uma experiência guiada que vocês recebem em formato digital e percorrem juntos, com papel e caneta.</dd></div>
+    <div><dt>Quanto tempo leva?</dt><dd>Não existe tempo certo. Algumas perguntas levam poucos minutos, outras abrem conversas longas. Dá para fazer tudo de uma vez ou continuar outro dia.</dd></div>
+    <div><dt>Precisamos estar em crise?</dt><dd>Não. É para casais que construíram uma vida e um negócio juntos e não querem deixar a rotina fazer com que um deixe de perceber o outro.</dd></div>
+    <div><dt>O CONECTA é cristão?</dt><dd>Sim. Nasce da nossa fé em Cristo: começa com um convite à oração e traz dois textos bíblicos que aprofundam a conversa. Não é um devocional.</dd></div>
+    <div><dt>Substitui terapia?</dt><dd>Não. É uma experiência de reflexão e conversa. Se a relação envolve medo, violência, coerção ou risco, procurem apoio seguro e apropriado.</dd></div>
+  </dl>
+</div></section>
+
+<section class="fecho">
+  <img src="img/papeis.jpg" alt="Mesa de madeira com duas folhas em branco e duas canetas, uma de cada lado" loading="lazy">
+  <div class="rv">
+    <p class="num">Sem pressa. Sem respostas certas. Sem cronômetro.</p>
+    <h2>Nenhum negócio que vocês construam juntos deveria custar <em>a conexão que existe entre vocês.</em></h2>
+    <p>CONECTA · R$ 37 · acesso imediato</p>
+    <a class="btn" href="#">Quero viver o CONECTA <span>↘</span></a>
+  </div>
+</section>
+</main>
+
+<footer class="rodape"><div class="w">
+  <span><a href="#inicio">Os Mirandas</a> · Vida · Casamento · Negócios</span>
+  <span>Instagram <a href="https://instagram.com/osmiirandas">@osmiirandas</a></span>
+</div></footer>
+<div class="fixo"><a class="btn" href="#">Quero viver o CONECTA <span>↘</span></a></div>
+
+<script>
+'use strict';
+/* Animações no espírito da referência: surgimento ao rolar, foto do arco com profundidade 3D e luz que segue o cursor,
+   parallax suave no topo e um campo de sinais desenhado só quando o mouse se mexe (sem loop permanente). */
+(function(){
+  const calmo=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const mouse=window.matchMedia('(pointer:fine)').matches;
+  const largo=window.matchMedia('(min-width:900px)');
+
+  if(!calmo&&'IntersectionObserver' in window){
+    document.body.classList.add('rv-pronto');
+    const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visivel');obs.unobserve(e.target);}}),{threshold:.08});
+    document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+  }
+
+  if(!calmo&&mouse){
+    document.querySelectorAll('[data-depth]').forEach(el=>{
+      el.addEventListener('pointermove',e=>{
+        const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+        el.style.setProperty('--rx',`${(x-.5)*7}deg`);el.style.setProperty('--ry',`${(y-.5)*-5}deg`);
+        el.style.setProperty('--mx',`${x*100}%`);el.style.setProperty('--my',`${y*100}%`);
+      });
+      el.addEventListener('pointerleave',()=>{el.style.setProperty('--rx','0deg');el.style.setProperty('--ry','0deg');});
+    });
+  }
+
+  const arco=document.querySelector('.arco');
+  if(!calmo&&arco){
+    let pendente=false;
+    const mover=()=>{arco.style.setProperty('--py',largo.matches?`${Math.min(window.scrollY,850)*.045}px`:'0px');pendente=false;};
+    window.addEventListener('scroll',()=>{if(!pendente&&window.scrollY<1100){requestAnimationFrame(mover);pendente=true;}},{passive:true});
+  }
+
+  const tela=document.querySelector('.sinais'),ctx=tela&&tela.getContext('2d');
+  if(!ctx)return;
+  let sx=null,sy=null,fila=false;
+  function desenhar(){
+    fila=false;
+    const b=tela.getBoundingClientRect(),w=b.width,h=b.height,dpr=Math.min(window.devicePixelRatio||1,1.5);
+    tela.width=Math.round(w*dpr);tela.height=Math.round(h*dpr);ctx.scale(dpr,dpr);ctx.clearRect(0,0,w,h);
+    const cx=w*(sx??(largo.matches?.72:.5)),cy=h*(sy??(largo.matches?.45:.68));
+    for(let i=0;i<22;i++){ctx.beginPath();ctx.strokeStyle=`rgba(183,195,166,${.03+i*.0014})`;ctx.lineWidth=.6;ctx.ellipse(cx,cy,100+i*26,150+i*18,-.6,0,Math.PI*2);ctx.stroke();}
+    for(let i=0;i<38;i++){const a=i*2.399,r=140+(i%11)*29;ctx.beginPath();ctx.fillStyle='rgba(211,220,196,.32)';ctx.arc(cx+Math.cos(a)*r,cy+Math.sin(a)*r*.65,i%4===0?1.5:.7,0,Math.PI*2);ctx.fill();}
+  }
+  const pedir=()=>{if(!fila){fila=true;requestAnimationFrame(desenhar);}};
+  desenhar();
+  window.addEventListener('resize',pedir,{passive:true});
+  if(!calmo&&mouse)document.querySelector('.topo').addEventListener('pointermove',e=>{
+    if(!largo.matches)return;
+    const r=tela.getBoundingClientRect();sx=.68+(e.clientX-r.left)/r.width*.08;sy=.38+(e.clientY-r.top)/r.height*.08;pedir();
+  },{passive:true});
+})();
+</script>

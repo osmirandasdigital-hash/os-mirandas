@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<!-- Capas da área de membros do CONECTA na Hotmart.
+     Render: capas.html?p=banner (1920x640) | ?p=vertical (720x1040) | ?p=horizontal (1280x720) -->
+<style>
+  @font-face { font-family: "Playfair Display"; font-weight: 400; font-style: normal; src: url(../assets/fontes/playfair-display-latin-400-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Playfair Display"; font-weight: 400; font-style: italic; src: url(../assets/fontes/playfair-display-latin-400-italic.woff2) format("woff2"); }
+  @font-face { font-family: "Playfair Display"; font-weight: 500; font-style: normal; src: url(../assets/fontes/playfair-display-latin-500-normal.woff2) format("woff2"); }
+  @font-face { font-family: Montserrat; font-weight: 500; src: url(../assets/fontes/montserrat-latin-500-normal.woff2) format("woff2"); }
+  :root { --verde: #1f3a2e; --verde-noite: #142a20; --creme: #f3efe5; --salvia: #b7c3a6; }
+  html, body { margin: 0; overflow: hidden; }
+  .q { position: relative; overflow: hidden; color: var(--creme);
+       background: radial-gradient(120% 140% at 70% 40%, var(--verde) 0%, var(--verde-noite) 100%); }
+  .q::before { content: ""; position: absolute; inset: 0; background: url(../assets/grao.png); opacity: .55; mix-blend-mode: overlay; }
+  .q svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .q path { fill: none; stroke-linecap: round; }
+  .q .a { stroke: var(--creme); opacity: .8; }
+  .q .b { stroke: var(--salvia); }
+  .marca { font: 500 1em/1 "Playfair Display", Georgia, serif; letter-spacing: .17em; margin-right: -.17em; }
+  .sub { font: 400 1em/1.5 "Playfair Display", Georgia, serif; opacity: .88; }
+  .sub i { font-style: italic; }
+  .por { font: 500 1em/1 Montserrat, sans-serif; letter-spacing: .34em; text-transform: uppercase; color: var(--salvia); }
+  .q > div { position: absolute; z-index: 2; }
+
+  /* banner: a Hotmart põe o título à esquerda e a capa à direita; o fundo fica limpo e mais escuro à esquerda */
+  #banner { width: 1920px; height: 640px; background: linear-gradient(90deg, var(--verde-noite) 0%, #18301f 45%, var(--verde) 100%); }
+  #banner .a, #banner .b { stroke-width: 1.6; }
+
+  #vertical { width: 720px; height: 1040px; }
+  #vertical .t { left: 0; right: 0; top: 270px; text-align: center; }
+  #vertical .marca { font-size: 74px; }
+  #vertical .sub { font-size: 23px; margin-top: 34px; }
+  #vertical .por { left: 0; right: 0; bottom: 92px; text-align: center; font-size: 13px; }
+  #vertical .a, #vertical .b { stroke-width: 1.5; }
+
+  #horizontal { width: 1280px; height: 720px; }
+  #horizontal .t { left: 110px; top: 150px; }
+  #horizontal .marca { font-size: 96px; }
+  #horizontal .sub { font-size: 28px; margin-top: 36px; }
+  #horizontal .por { right: 110px; top: 96px; font-size: 14px; }
+  #horizontal .a, #horizontal .b { stroke-width: 1.6; }
+</style></head>
+<body>
+<section class="q" id="banner" hidden>
+  <svg viewBox="0 0 1920 640" preserveAspectRatio="none">
+    <path class="b" d="M-10 120 C 420 120, 760 380, 1180 420 S 1700 432, 1940 432"/>
+    <path class="a" d="M-10 600 C 440 600, 790 470, 1200 440 S 1700 446, 1940 446"/>
+  </svg>
+</section>
+
+<section class="q" id="vertical" hidden>
+  <svg viewBox="0 0 148 210" preserveAspectRatio="none">
+    <path class="b" d="M-2 66 C 34 66, 58 112, 92 121 S 136 123, 150 123" vector-effect="non-scaling-stroke"/>
+    <path class="a" d="M-2 168 C 36 168, 60 128, 94 123.6 S 136 125.4, 150 125.4" vector-effect="non-scaling-stroke"/>
+  </svg>
+  <div class="t">
+    <div class="marca">CONECTA</div>
+    <p class="sub">Uma pausa para quem divide<br>a vida e o negócio.</p>
+  </div>
+  <div class="por">Por Os Mirandas</div>
+</section>
+
+<section class="q" id="horizontal" hidden>
+  <svg viewBox="0 0 1280 720" preserveAspectRatio="none">
+    <path class="b" d="M-10 470 C 360 470, 640 590, 940 612 S 1180 618, 1300 618"/>
+    <path class="a" d="M-10 712 C 380 712, 660 640, 950 622 S 1180 626, 1300 626"/>
+  </svg>
+  <div class="t">
+    <div class="marca">CONECTA</div>
+    <p class="sub">Uma pausa para quem divide<br>a vida e o negócio.</p>
+  </div>
+  <div class="por">Por Os Mirandas</div>
+</section>
+<script>
+  const p = new URLSearchParams(location.search).get("p") || "vertical";
+  document.getElementById(p).hidden = false;
+</script>
+</body></html>

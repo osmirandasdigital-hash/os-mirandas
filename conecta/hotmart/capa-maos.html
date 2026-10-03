@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8">
 <!-- Capa do CONECTA com as mãos dadas (fotos/cenarios/maos-dadas-cafe.webp).
-     Render: capa-maos.html?f=a5 (1036x1470) | quadrado (1080x1080) | vertical (720x1040) | horizontal (1280x720) | banner (1920x640) -->
+     Render: capa-maos.html?f=a5 (1036x1470) | quadrado (1080x1080) | vertical (720x1040) | horizontal (1280x720) | banner (1920x640) | banner2 (1920x640, bege + foto) -->
 <style>
   @font-face { font-family: "Playfair Display"; font-weight: 400; font-style: normal; src: url(../assets/fontes/playfair-display-latin-400-normal.woff2) format("woff2"); }
   @font-face { font-family: "Playfair Display"; font-weight: 400; font-style: italic; src: url(../assets/fontes/playfair-display-latin-400-italic.woff2) format("woff2"); }
@@ -65,6 +65,19 @@
   #banner { width: 1920px; height: 640px; background: #1d3a2b; }
   #banner img { object-position: 50% 44%; }
   #banner .veu { background: none; }
+
+  /* banner2: bege com CONECTA em verde à esquerda, a foto inteira (sem esticar) à direita */
+  #banner2 { width: 1920px; height: 640px; background: #efe8dc; color: var(--verde); }
+  #banner2 .bege { position: absolute; inset: 0; background: url(../assets/grao.png); opacity: .5; mix-blend-mode: multiply; }
+  #banner2 img { left: auto; right: 0; width: 840px; height: 640px; object-position: 50% 58%; }
+  #banner2 .t2 { position: absolute; left: 150px; top: 0; bottom: 0; width: 900px; display: flex; flex-direction: column; justify-content: center; }
+  #banner2 .marca { font-size: 128px; text-shadow: none; margin-left: -4px; }
+  #banner2 .sub { font-size: 38px; margin-top: 30px; text-shadow: none; color: #2c4a3b; }
+  #banner2 .por2 { margin-top: 44px; font: 500 16px/1 Montserrat, sans-serif; letter-spacing: .34em; text-transform: uppercase; color: #5f6f54; }
+  /* banner3: igual ao banner2, sem texto (a Hotmart escreve o título por cima na tela do comprador) */
+  #banner3 { width: 1920px; height: 640px; background: #efe8dc; }
+  #banner3 .bege { position: absolute; inset: 0; background: url(../assets/grao.png); opacity: .5; mix-blend-mode: multiply; }
+  #banner3 img { left: auto; right: 0; width: 840px; height: 640px; object-position: 50% 58%; }
 </style></head>
 <body>
 <section class="q" id="a5" hidden>
@@ -98,6 +111,15 @@
 <section class="q deitado" id="banner" hidden>
   <img src="../../fotos/cenarios/maos-dadas-cafe.webp" alt="">
   <div class="veu"></div>
+</section>
+<section class="q" id="banner2" hidden>
+  <div class="bege"></div>
+  <img src="../../fotos/cenarios/maos-dadas-cafe.webp" alt="">
+  <div class="t2"><div class="marca">CONECTA</div><p class="sub">Uma pausa para quem divide<br><i>a vida e o negócio.</i></p><div class="por2">Por Os Mirandas</div></div>
+</section>
+<section class="q" id="banner3" hidden>
+  <div class="bege"></div>
+  <img src="../../fotos/cenarios/maos-dadas-cafe.webp" alt="">
 </section>
 <script>
   const f = new URLSearchParams(location.search).get("f") || "a5";

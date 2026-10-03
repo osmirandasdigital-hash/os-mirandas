@@ -64,14 +64,12 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
 .preco{color:var(--creme)}
 .preco b{display:block;font:400 40px/1 var(--f-serif)}
 .preco span{display:block;font-size:13px;color:var(--claro-suave);margin-top:6px}
-.arco{position:relative;max-width:480px;margin-inline:auto;width:100%;padding:14px}
-.arco::before{content:"";position:absolute;inset:0;border:1px solid var(--linha-esc);border-radius:999px 999px 0 0}
+.arco{position:relative;max-width:480px;margin-inline:auto;width:100%}
+.moldura{display:block;position:relative;padding:14px;border:1px solid var(--linha-esc);border-radius:999px 999px 0 0}
 .arco img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:999px 999px 0 0}
-.arco figcaption{position:absolute;left:44px;bottom:38px;color:var(--creme)}
-.arco figcaption b{display:block;font:italic 400 clamp(32px,4vw,44px)/1 var(--f-serif)}
-.arco figcaption small{display:block;margin-top:8px;font:600 10.5px/1 var(--f-disp);letter-spacing:.24em;text-transform:uppercase}
-.arco::after{content:"";position:absolute;left:14px;right:14px;bottom:14px;height:45%;background:linear-gradient(transparent,rgb(20 36 28/.75));pointer-events:none}
-.arco figcaption{z-index:2}
+.arco figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:18px;padding-top:14px;border-top:1px solid var(--linha-esc);color:var(--creme)}
+.arco figcaption b{font:italic 400 clamp(22px,2.4vw,28px)/1 var(--f-serif)}
+.arco figcaption small{font:600 10.5px/1 var(--f-disp);letter-spacing:.24em;text-transform:uppercase;color:var(--salvia)}
 .rodape-hero{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding-block:20px 26px;border-top:1px solid var(--linha-esc);
   font:600 10.5px/1.4 var(--f-disp);letter-spacing:.2em;text-transform:uppercase;color:var(--claro-suave)}
 .rodape-hero a{color:var(--claro-suave);text-decoration:none}
@@ -187,6 +185,8 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
 .abas a{transition:background .2s}
 .abas a:hover{background:var(--salvia-clara)}
 .abas a:hover span:last-child{transform:translate(3px,3px)}
+.folha{--rx:0deg;--ry:0deg;transform:perspective(1000px) rotateY(var(--rx)) rotateX(var(--ry));transition:transform .4s ease-out,rotate .5s ease-out,translate .5s ease-out,box-shadow .5s}
+.folha:hover{rotate:0deg;translate:0 -8px;box-shadow:0 2px 4px rgb(31 58 46/.1),0 36px 60px -26px rgb(31 58 46/.5)}
 .foto{overflow:hidden;--rx:0deg;--ry:0deg;transform:perspective(1200px) rotateY(var(--rx)) rotateX(var(--ry));transition:transform .4s ease-out}
 .foto img{filter:saturate(.55);transition:filter .7s,transform .9s}
 .foto:hover img{filter:saturate(1);transform:scale(1.04)}
@@ -228,8 +228,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
         </div>
       </div>
       <figure class="arco" data-depth>
-        <img src="img/leandro-fernanda.webp" alt="Leandro e Fernanda Miranda sorrindo juntos num café, com duas xícaras na mesa">
-        <span class="luz" aria-hidden="true"></span>
+        <span class="moldura"><img src="img/leandro-fernanda.webp" alt="Leandro e Fernanda Miranda sorrindo juntos num café, com duas xícaras na mesa"><span class="luz" aria-hidden="true"></span></span>
         <span class="indice" aria-hidden="true">01 / Presença</span>
         <figcaption><b>Leandro &amp; Fernanda</b><small>Os Mirandas</small></figcaption>
       </figure>
@@ -263,7 +262,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
       <p class="num">01 / O Museu do Nós</p>
       <h3>Acima de tudo que vocês administram, existe <em>uma história.</em></h3>
       <p>A música que lembra o outro, o lugar que querem visitar de novo, a piada que só vocês entendem. Antes de qualquer tensão, memória e afeto.</p>
-      <a class="seta" href="#oferta">Quero viver isso juntos <span>↗</span></a>
+      <a class="seta" href="#oferta">Quero viver isso <span>↗</span></a>
     </div>
   </div>
 
@@ -273,7 +272,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
       <p class="num">02 / Onde foi parar a gente?</p>
       <h3>Às vezes não existe crise. Existe uma vida que ficou <em>cheia demais.</em></h3>
       <p>A última semana de verdade, sem procurar culpados. Em que momentos alguém perceberia que vocês são marido e mulher, e não só dois sócios administrando uma vida?</p>
-      <a class="seta" href="#oferta">Quero viver isso juntos <span>↗</span></a>
+      <a class="seta" href="#oferta">Quero viver isso <span>↗</span></a>
     </div>
   </div>
 
@@ -283,7 +282,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
       <p class="num">03 / Sócio ou cônjuge?</p>
       <h3>A mesma pessoa, <em>dois papéis.</em></h3>
       <p>Admirar o parceiro de vida e o parceiro de negócio. Conversar sobre o dinheiro da casa e da empresa. Combinar quem decide o quê, sem precisar decidir tudo juntos.</p>
-      <a class="seta" href="#oferta">Quero viver isso juntos <span>↗</span></a>
+      <a class="seta" href="#oferta">Quero viver isso <span>↗</span></a>
     </div>
   </div>
 
@@ -293,7 +292,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
       <p class="num">04 / O que eu queria que você soubesse</p>
       <h3>Algumas coisas só nunca encontraram <em>uma boa hora.</em></h3>
       <p>“Ultimamente eu tenho me sentido…”, “Eu sinto falta de…”. E uma regra simples: antes de responder, dizer o que entendeu.</p>
-      <a class="seta" href="#oferta">Quero viver isso juntos <span>↗</span></a>
+      <a class="seta" href="#oferta">Quero viver isso <span>↗</span></a>
     </div>
   </div>
 
@@ -303,7 +302,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
       <p class="num">05 / A vida que estamos construindo</p>
       <h3>Crescer importa. Mas também importa saber <em>para que.</em></h3>
       <p>O que significa prosperidade para vocês. O que a agenda revela ser o tesouro do casal. E, no fim, um acordo: o que vão proteger, parar e voltar a fazer.</p>
-      <a class="seta" href="#oferta">Quero viver isso juntos <span>↗</span></a>
+      <a class="seta" href="#oferta">Quero viver isso <span>↗</span></a>
     </div>
   </div>
 </div></section>
@@ -342,7 +341,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
     <p class="destaque">O CONECTA não foi feito para ser lido. Foi feito para fazer vocês conversarem.</p>
     <p>Sem questionário enviado, sem análise de ninguém, sem pontuação. As respostas ficam no papel de vocês.</p>
   </div>
-  <div class="folha">
+  <div class="folha" data-depth>
     <p class="num"><span>O combinado</span><span>CONECTA</span></p>
     <blockquote>Hoje não estamos aqui para descobrir quem está certo. Estamos aqui para prestar atenção um no outro.</blockquote>
     <ol>

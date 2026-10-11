@@ -112,6 +112,21 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
 .inclui li::before{content:"";position:absolute;left:0;top:23px;width:12px;height:3px;border-top:1px solid var(--creme);border-bottom:1px solid var(--salvia)}
 .oferta .compra{margin-top:28px}
 
+/* ---------- bônus ---------- */
+.bonus{background:var(--papel);padding-block:clamp(64px,8vw,100px)}
+.bonus .num{color:var(--salvia-esc)}
+.bonus>.w>h2{font:400 clamp(32px,4.2vw,50px)/1.1 var(--f-serif);color:var(--verde);margin-top:14px}
+.bonus-lista{list-style:none;display:grid;gap:clamp(28px,4vw,44px);margin-top:clamp(36px,5vw,56px)}
+@media(min-width:760px){.bonus-lista{grid-template-columns:repeat(3,1fr)}}
+.bonus-lista li{min-width:0}
+.bonus-lista img{width:100%;max-width:300px;aspect-ratio:148/210;object-fit:cover}
+.bonus-lista small{display:block;margin-top:20px;font:600 11px/1 var(--f-disp);letter-spacing:.22em;text-transform:uppercase;color:var(--salvia-esc)}
+.bonus-lista h3{font:400 24px/1.2 var(--f-serif);color:var(--verde);margin-top:10px}
+.bonus-lista p{color:var(--suave);margin-top:10px;max-width:24em}
+.bonus .incluso{margin-top:clamp(36px,5vw,52px);padding-top:22px;border-top:1px solid var(--linha);color:var(--verde);font-weight:600}
+.bonus .btn{margin-top:22px;background:var(--verde);color:var(--creme)}
+.bonus .btn:hover{background:var(--verde-2)}
+
 /* ---------- combinado (faixa sálvia) ---------- */
 .combinado{background:var(--salvia-clara);padding-block:clamp(64px,8vw,100px)}
 .combinado .w{display:grid;gap:clamp(36px,5vw,72px);align-items:center}
@@ -323,6 +338,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
       <li>O sinal de volta de vocês, para guardar</li>
       <li>Orientações para quando uma conversa esquentar</li>
       <li>Duas orações e uma carta de Leandro e Fernanda</li>
+      <li>3 bônus especiais, sem custo adicional</li>
     </ul>
     <p class="formato">Vocês recebem o CONECTA em formato digital, com acesso imediato, para usar na tela ou imprimir.</p>
     <div class="compra">
@@ -330,6 +346,33 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
       <p class="preco"><b>R$ 37</b><span>Acesso imediato</span></p>
     </div>
   </div>
+</div></section>
+
+<section class="bonus" id="bonus"><div class="w">
+  <p class="num">Bônus</p>
+  <h2>E você ainda recebe <em>3 bônus especiais</em></h2>
+  <ul class="bonus-lista">
+    <li class="rv">
+      <img src="img/bonus-1.jpg" alt="Capa do bônus O Convite: mãos entregando um cartão sobre a mesa" loading="lazy">
+      <small>Bônus 01</small>
+      <h3>O Convite</h3>
+      <p>Um guia para convidar quem você ama a viver o CONECTA de forma leve e natural.</p>
+    </li>
+    <li class="rv">
+      <img src="img/bonus-2.jpg" alt="Capa do bônus Preparando Nosso Encontro: sofá aconchegante com manta, vela e duas canecas" loading="lazy">
+      <small>Bônus 02</small>
+      <h3>Preparando Nosso Encontro</h3>
+      <p>Orientações simples para organizar um momento confortável, sem complicação.</p>
+    </li>
+    <li class="rv">
+      <img src="img/bonus-3.jpg" alt="Capa do bônus Sete Orações: mãos do casal unidas sobre a Bíblia aberta" loading="lazy">
+      <small>Bônus 03</small>
+      <h3>Sete Orações para Continuar Escolhendo Nós</h3>
+      <p>Orações para cultivar fé, gratidão, parceria e cuidado nos dias seguintes.</p>
+    </li>
+  </ul>
+  <p class="incluso">Os três bônus estão incluídos no CONECTA, sem custo adicional.</p>
+  <a class="btn" href="https://pay.hotmart.com/S107878528P">Quero viver o CONECTA <span>↘</span></a>
 </div></section>
 
 <section class="combinado"><div class="w">

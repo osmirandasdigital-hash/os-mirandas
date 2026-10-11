@@ -196,7 +196,7 @@
     mensagemWhatsapp: "Oi! Vim pelo Instagram e quero saber mais.",
     email: "osmirandasdigital@gmail.com",
 
-    // Cartão em destaque do produto (o primeiro da lista)
+    // Cartão em destaque do produto (logo abaixo do teste gratuito)
     produto: {
       link: "conecta/venda/",                  // página de vendas do CONECTA
       selo: "Novo",
@@ -206,7 +206,7 @@
       capa: "conecta/venda/img/capa.jpg",
     },
 
-    // Teste gratuito (logo abaixo do CONECTA)
+    // Teste gratuito (o primeiro da lista)
     quiz: {
       link: "https://tally.so/r/yPKEdg?utm_source=instagram&utm_medium=bio",
       selo: "Teste gratuito",
@@ -254,6 +254,11 @@
   }
 
   const nav = document.getElementById("links");
+  if (c.quiz.link) {
+    nav.appendChild(linkItem({
+      href: c.quiz.link, icon: "quiz", title: c.quiz.titulo, sub: c.quiz.descricao, cls: "quiz", badge: c.quiz.selo,
+    }));
+  }
   if (c.produto.link) {
     const p = c.produto, a = document.createElement("a");
     a.className = "destaque";
@@ -269,11 +274,6 @@
     a.querySelector(".sub").textContent = p.descricao;
     a.querySelector(".cta span").textContent = p.chamada;
     nav.appendChild(a);
-  }
-  if (c.quiz.link) {
-    nav.appendChild(linkItem({
-      href: c.quiz.link, icon: "quiz", title: c.quiz.titulo, sub: c.quiz.descricao, cls: "quiz", badge: c.quiz.selo,
-    }));
   }
   if (c.whatsapp) {
     nav.appendChild(linkItem({

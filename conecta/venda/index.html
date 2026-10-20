@@ -2,20 +2,21 @@
 <html lang="pt-BR">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>CONECTA · Os Mirandas</title>
-<meta name="description" content="CONECTA: uma pausa guiada para casais que se amam, mas perceberam que a vida começou a ocupar espaço demais entre os dois. Algumas horas para voltarem um para o outro.">
-<!-- Página de venda do CONECTA · v3 · estrutura inspirada na referência Black Boutique (Os Formagios), vestida com a identidade Os Mirandas -->
+<title>CONECTA ELA · Os Mirandas</title>
+<meta name="description" content="CONECTA ELA: uma jornada devocional de 7 dias para mulheres que desejam cultivar mais conexão, carinho e sabedoria no casamento.">
+<!-- Página de venda do CONECTA ELA · v4 · mesma estrutura visual da v3 (referência Black Boutique, identidade Os Mirandas), copy nova do produto -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap">
 <style>
-/* Layout: topo escuro com a foto do casal num arco · faixas creme alternando foto e texto (01–05) · faixa verde com a oferta ·
-   faixa sálvia com o "combinado" em papel · perguntas · fecho dividido foto/texto · rodapé escuro.
+/* Layout: topo escuro com a capa · faixas creme de texto · os 7 dias · faixa sálvia com a estrutura de cada dia em papel ·
+   bônus · para quem é · quem somos · oferta na faixa escura · perguntas · fecho dividido foto/texto · rodapé escuro.
    Visual único de marca, deliberadamente sem modo escuro alternativo: as cores estão todas definidas aqui. */
 :root{
   color-scheme:light;
   --noite:#14241c; --verde:#1f3a2e; --verde-2:#2c4a3c;
   --creme:#f3efe5; --papel:#faf7f1; --salvia:#b7c3a6; --salvia-clara:#d3dcc4; --salvia-esc:#56664b;
+  --terracota:#a8644e; --terracota-clara:#d9a08c;
   --texto:#2b2c28; --suave:#5f5b52; --linha:#d9d1c1; --linha-esc:rgb(243 239 229/.16); --claro-suave:rgb(243 239 229/.72);
   --f-disp:Montserrat,"Segoe UI",Helvetica,Arial,sans-serif;
   --f-serif:"Playfair Display",Georgia,"Times New Roman",serif;
@@ -24,7 +25,7 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{background:var(--creme);color:var(--texto);font:16px/1.7 var(--f-disp);-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
+img{display:block;max-width:100%;height:auto}
 .w{max-width:1140px;margin:0 auto;padding-inline:clamp(18px,5vw,56px)}
 h1,h2,h3{font-weight:500;text-wrap:balance}
 em{font-family:var(--f-serif);font-style:italic;font-weight:400;letter-spacing:0}
@@ -38,9 +39,8 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
   background:var(--salvia-clara);color:var(--verde);font:600 15px/1.2 var(--f-disp);text-decoration:none;transition:background .2s}
 .btn:hover{background:var(--salvia)}
 .btn span{font-size:18px}
-.seta{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--linha);
-  color:var(--verde);font:600 14px/1.3 var(--f-disp);text-decoration:none}
-.seta span{font-size:18px;color:var(--salvia-esc)}
+.btn-escuro{background:var(--verde);color:var(--creme)}
+.btn-escuro:hover{background:var(--verde-2)}
 
 /* ---------- topo escuro ---------- */
 .topo{background:var(--noite);color:var(--creme)}
@@ -50,99 +50,124 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
 .barra .link{color:var(--creme);text-decoration:none;font:500 14px/1 var(--f-disp);display:flex;gap:14px;align-items:center}
 .barra .link span{color:var(--salvia)}
 .hero{display:grid;gap:clamp(36px,5vw,64px);align-items:center;padding-block:clamp(40px,6vw,72px)}
-@media(min-width:900px){.hero{grid-template-columns:1.05fr .95fr}}
+@media(min-width:900px){.hero{grid-template-columns:1.15fr .85fr}}
 .hero>div{min-width:0}
 .hero .rot{color:var(--creme)}
-.hero .rot::before{background:var(--salvia)}
-.hero h1{font-family:var(--f-disp);font-weight:500;font-size:clamp(42px,6vw,76px);line-height:1.02;letter-spacing:-.045em;margin-top:26px;color:var(--creme)}
-.hero h1 em{color:var(--salvia);font-size:1.06em}
-.hero h2{font:400 clamp(26px,3vw,38px)/1.15 var(--f-serif);margin-top:18px;color:var(--creme)}
-.hero p.sub{color:var(--claro-suave);max-width:28em;margin-top:22px;font-size:17px}
+.hero .rot::before{background:var(--terracota-clara)}
+.hero h1{font-family:var(--f-disp);font-weight:500;font-size:clamp(34px,4.6vw,58px);line-height:1.06;letter-spacing:-.04em;margin-top:26px;color:var(--creme)}
+.hero h1 em{color:var(--salvia);font-size:1.04em}
+.hero h2{font:400 clamp(22px,2.4vw,30px)/1.25 var(--f-serif);margin-top:18px;color:var(--terracota-clara)}
+.hero p.sub{color:var(--claro-suave);max-width:30em;margin-top:22px;font-size:17px}
+.hero p.sub b{color:var(--creme);font-weight:500}
+.hero p.formato{margin-top:18px;font:600 11px/1.5 var(--f-disp);letter-spacing:.18em;text-transform:uppercase;color:var(--salvia)}
 .compra{display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;margin-top:34px}
 .preco{color:var(--creme)}
 .preco b{display:block;font:400 40px/1 var(--f-serif)}
 .preco span{display:block;font-size:13px;color:var(--claro-suave);margin-top:6px}
-.arco{position:relative;max-width:480px;margin-inline:auto;width:100%}
-.moldura{display:block;position:relative;padding:14px;border:1px solid var(--linha-esc);border-radius:999px 999px 0 0}
-.arco img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:999px 999px 0 0}
-.arco figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:18px;padding-top:14px;border-top:1px solid var(--linha-esc);color:var(--creme)}
-.arco figcaption b{font:italic 400 clamp(22px,2.4vw,28px)/1 var(--f-serif)}
-.arco figcaption small{font:600 10.5px/1 var(--f-disp);letter-spacing:.24em;text-transform:uppercase;color:var(--salvia)}
+.capa-hero{position:relative;max-width:380px;margin-inline:auto;width:100%;--rx:0deg;--ry:0deg;--py:0px;
+  transform:translateY(var(--py)) perspective(1200px) rotateY(var(--rx)) rotateX(var(--ry));transition:transform .3s ease-out}
+.capa-hero img{width:100%;aspect-ratio:2/3;object-fit:cover;box-shadow:0 30px 60px -24px rgb(0 0 0/.7)}
+.capa-hero figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:22px;padding-top:14px;border-top:1px solid var(--linha-esc);color:var(--creme)}
+.capa-hero figcaption b{font:italic 400 clamp(20px,2.2vw,26px)/1 var(--f-serif)}
+.capa-hero figcaption small{font:600 10.5px/1 var(--f-disp);letter-spacing:.24em;text-transform:uppercase;color:var(--salvia)}
 .rodape-hero{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding-block:20px 26px;border-top:1px solid var(--linha-esc);
   font:600 10.5px/1.4 var(--f-disp);letter-spacing:.2em;text-transform:uppercase;color:var(--claro-suave)}
 .rodape-hero a{color:var(--claro-suave);text-decoration:none}
 
-/* ---------- caminho ---------- */
-.caminho{padding-block:clamp(64px,8vw,104px)}
-.caminho .rot{color:var(--salvia-esc);font-size:11px}
-.caminho>.w>h2{font-family:var(--f-disp);font-size:clamp(34px,4.6vw,56px);line-height:1.04;letter-spacing:-.04em;color:var(--verde);margin-top:18px}
-.caminho h2 em{color:var(--salvia-esc)}
-.abas{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));margin-top:34px;border-block:1px solid var(--linha)}
-.abas a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 14px 14px 0;color:var(--texto);text-decoration:none;font-size:13.5px}
-.abas li+li a{padding-left:14px;border-left:1px solid var(--linha)}
-.abas a span{color:var(--salvia-esc)}
-.abas small{color:var(--salvia-esc);font-weight:600;margin-right:8px}
-.linha-exp{display:grid;gap:clamp(28px,5vw,64px);align-items:center;margin-top:clamp(56px,7vw,88px)}
-@media(min-width:860px){.linha-exp{grid-template-columns:1fr 1fr}.linha-exp.inv .foto{order:2}}
-.linha-exp>div{min-width:0}
-.foto{position:relative}
-.foto img{width:100%;aspect-ratio:5/4;object-fit:cover}
-.foto b{position:absolute;left:24px;bottom:22px;font:italic 400 clamp(30px,3.6vw,42px)/1 var(--f-serif);color:var(--creme);z-index:2}
-.foto::after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgb(20 36 28/.6))}
-.linha-exp h3{font-family:var(--f-disp);font-size:clamp(26px,2.8vw,34px);line-height:1.12;letter-spacing:-.03em;color:var(--verde);margin-top:14px}
-.linha-exp h3 em{color:var(--salvia-esc)}
-.linha-exp p{color:var(--suave);margin-top:16px;max-width:30em}
-.linha-exp .seta{margin-top:22px}
+/* ---------- faixas de texto corrido ---------- */
+.texto{padding-block:clamp(64px,8vw,104px)}
+.texto.papel{background:var(--papel)}
+.texto .w{display:grid;gap:clamp(28px,5vw,72px)}
+@media(min-width:900px){.texto .w{grid-template-columns:.9fr 1.1fr;align-items:start}.texto .w>div:first-child{position:sticky;top:40px}}
+.texto .w>div{min-width:0}
+.texto h2{font-family:var(--f-disp);font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-.035em;color:var(--verde);margin-top:16px}
+.texto h2 em{color:var(--salvia-esc)}
+.texto .corpo p{color:var(--suave);margin-top:14px;max-width:34em}
+.texto .corpo p:first-child{margin-top:0}
+.texto .corpo p.forte{font:400 clamp(20px,2vw,24px)/1.4 var(--f-serif);color:var(--verde);margin-top:28px}
+.texto .corpo p.ponte{margin-top:28px;padding-top:20px;border-top:1px solid var(--linha);color:var(--verde);font-weight:600}
+.texto .btn{margin-top:30px}
 
-/* ---------- oferta (faixa verde) ---------- */
-.oferta{background:var(--noite);color:var(--creme);padding-block:clamp(64px,8vw,104px)}
-.oferta .w{display:grid;gap:clamp(36px,5vw,72px);align-items:center}
-@media(min-width:860px){.oferta .w{grid-template-columns:1fr 1fr}}
-.oferta .w>div{min-width:0}
-.pilha{position:relative;max-width:440px;margin-inline:auto;width:100%;aspect-ratio:1/1.05}
-.pilha img{position:absolute;width:62%;aspect-ratio:894/1270;object-fit:cover;box-shadow:0 18px 40px -14px rgb(0 0 0/.55)}
-.pilha .p1{left:0;top:9%;rotate:-6deg}
-.pilha .p3{right:0;top:7%;rotate:6deg}
-.pilha .p2{left:19%;top:0;z-index:2}
-.oferta .num{color:var(--salvia)}
-.oferta h2{font:400 clamp(44px,5.6vw,72px)/1 var(--f-serif);margin-top:14px}
-.oferta h3{font-family:var(--f-disp);font-size:20px;line-height:1.35;margin-top:16px;color:var(--creme)}
-.inclui{list-style:none;margin-top:22px;border-top:1px solid var(--linha-esc)}
-.inclui li{padding:12px 0 12px 26px;border-bottom:1px solid var(--linha-esc);position:relative;color:var(--claro-suave);font-size:15px}
-.inclui li::before{content:"";position:absolute;left:0;top:23px;width:12px;height:3px;border-top:1px solid var(--creme);border-bottom:1px solid var(--salvia)}
-.oferta .compra{margin-top:28px}
+/* ---------- os 7 dias ---------- */
+.dias{background:var(--papel);padding-block:clamp(64px,8vw,104px)}
+.dias .rot{color:var(--salvia-esc);font-size:11px}
+.dias h2{font-family:var(--f-disp);font-size:clamp(32px,4.4vw,54px);line-height:1.04;letter-spacing:-.04em;color:var(--verde);margin-top:18px}
+.dias h2 em{color:var(--salvia-esc)}
+.dias ol{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:0 clamp(24px,4vw,48px);margin-top:clamp(36px,5vw,56px);border-top:1px solid var(--verde)}
+.dias li{padding:26px 0 28px;border-bottom:1px solid var(--linha);min-width:0}
+.dias li small{display:block;font:600 11px/1 var(--f-disp);letter-spacing:.22em;text-transform:uppercase;color:var(--terracota)}
+.dias li h3{font:400 23px/1.25 var(--f-serif);color:var(--verde);margin-top:12px}
+.dias li .ref{display:block;margin-top:8px;font:600 12px/1.3 var(--f-disp);letter-spacing:.06em;color:var(--salvia-esc)}
+.dias li p{color:var(--suave);margin-top:10px;font-size:15px}
 
-/* ---------- bônus ---------- */
-.bonus{background:var(--papel);padding-block:clamp(64px,8vw,100px)}
-.bonus .num{color:var(--salvia-esc)}
-.bonus>.w>h2{font:400 clamp(32px,4.2vw,50px)/1.1 var(--f-serif);color:var(--verde);margin-top:14px}
-.bonus-lista{list-style:none;display:grid;gap:clamp(28px,4vw,44px);margin-top:clamp(36px,5vw,56px)}
-@media(min-width:760px){.bonus-lista{grid-template-columns:repeat(3,1fr)}}
-.bonus-lista li{min-width:0}
-.bonus-lista img{width:100%;max-width:300px;aspect-ratio:148/210;object-fit:cover}
-.bonus-lista small{display:block;margin-top:20px;font:600 11px/1 var(--f-disp);letter-spacing:.22em;text-transform:uppercase;color:var(--salvia-esc)}
-.bonus-lista h3{font:400 24px/1.2 var(--f-serif);color:var(--verde);margin-top:10px}
-.bonus-lista p{color:var(--suave);margin-top:10px;max-width:24em}
-.bonus .incluso{margin-top:clamp(36px,5vw,52px);padding-top:22px;border-top:1px solid var(--linha);color:var(--verde);font-weight:600}
-.bonus .btn{margin-top:22px;background:var(--verde);color:var(--creme)}
-.bonus .btn:hover{background:var(--verde-2)}
-
-/* ---------- combinado (faixa sálvia) ---------- */
+/* ---------- estrutura de cada dia (faixa sálvia) ---------- */
 .combinado{background:var(--salvia-clara);padding-block:clamp(64px,8vw,100px)}
 .combinado .w{display:grid;gap:clamp(36px,5vw,72px);align-items:center}
 @media(min-width:860px){.combinado .w{grid-template-columns:1fr 1fr}}
 .combinado .w>div{min-width:0}
 .combinado .num{color:var(--salvia-esc)}
 .combinado .ico{font-size:42px;line-height:1;color:var(--verde);margin:22px 0 10px}
-.combinado h2{font-family:var(--f-disp);font-size:clamp(28px,3.4vw,40px);line-height:1.12;letter-spacing:-.03em;color:var(--verde)}
-.combinado h2 em{color:var(--verde)}
+.combinado h2{font:400 clamp(32px,4vw,50px)/1.1 var(--f-serif);letter-spacing:-.01em;color:var(--verde)}
+.combinado h2 span,.combinado h2 em{display:block}
+.combinado h2 em{color:var(--salvia-esc)}
 .combinado p{color:var(--salvia-esc);margin-top:16px;max-width:28em}
-.folha{background:var(--papel);padding:clamp(24px,4vw,40px);rotate:2deg;box-shadow:0 2px 4px rgb(31 58 46/.12),0 24px 50px -24px rgb(31 58 46/.45);max-width:470px;margin-inline:auto;width:100%}
+.combinado p.destaque{color:var(--verde);font-weight:500;margin-top:22px}
+.folha{background:var(--papel);padding:clamp(24px,4vw,40px);rotate:2deg;box-shadow:0 2px 4px rgb(31 58 46/.12),0 24px 50px -24px rgb(31 58 46/.45);max-width:480px;margin-inline:auto;width:100%}
 .folha .num{display:flex;justify-content:space-between}
-.folha blockquote{font:400 clamp(22px,2.4vw,28px)/1.25 var(--f-serif);color:var(--verde);margin-top:18px}
-.folha ol{list-style:none;margin-top:22px;border-top:1px solid var(--linha);counter-reset:p}
-.folha li{padding:12px 0;border-bottom:1px solid var(--linha);font-size:14.5px;color:var(--suave);counter-increment:p;display:flex;gap:14px}
+.folha ol{list-style:none;margin-top:18px;border-top:1px solid var(--linha);counter-reset:p}
+.folha li{padding:13px 0;border-bottom:1px solid var(--linha);font-size:14px;color:var(--suave);counter-increment:p;display:flex;gap:14px}
 .folha li::before{content:counter(p,decimal-leading-zero);font:600 11px/2 var(--f-disp);letter-spacing:.15em;color:var(--salvia-esc)}
+.folha li b{display:block;font:400 19px/1.3 var(--f-serif);color:var(--verde)}
+
+/* ---------- bônus ---------- */
+.bonus{background:var(--papel);padding-block:clamp(64px,8vw,100px)}
+.bonus .w{display:grid;gap:clamp(36px,5vw,72px);align-items:start}
+@media(min-width:860px){.bonus .w{grid-template-columns:.8fr 1.2fr}}
+.bonus .w>div{min-width:0}
+.bonus .capa-bonus{max-width:340px;width:100%;margin-inline:auto;aspect-ratio:1008/1428;object-fit:cover;box-shadow:0 2px 4px rgb(31 58 46/.1),0 30px 50px -26px rgb(31 58 46/.45)}
+.bonus .num{color:var(--terracota)}
+.bonus h2{font:400 clamp(30px,4vw,46px)/1.1 var(--f-serif);color:var(--verde);margin-top:14px}
+.bonus .apoio{font-family:var(--f-disp);font-size:clamp(17px,1.6vw,19px);font-weight:600;color:var(--verde);margin-top:12px}
+.bonus h3{font:600 11px/1 var(--f-disp);letter-spacing:.22em;text-transform:uppercase;color:var(--salvia-esc);margin-top:18px}
+.bonus p{color:var(--suave);margin-top:14px;max-width:34em}
+.mulheres{list-style:none;margin-top:22px;border-top:1px solid var(--linha)}
+.mulheres li{padding:16px 0;border-bottom:1px solid var(--linha)}
+.mulheres li b{display:block;font:400 21px/1.3 var(--f-serif);color:var(--verde)}
+.mulheres li span{display:block;color:var(--suave);font-size:15px;margin-top:4px}
+.bonus p.fecho-bonus{color:var(--verde);font-weight:600}
+
+/* ---------- quem somos (dividido) ---------- */
+.fecho{display:grid;background:var(--papel)}
+@media(min-width:860px){.fecho{grid-template-columns:1fr 1fr}}
+.fecho img{width:100%;height:100%;min-height:320px;aspect-ratio:4/3;object-fit:cover}
+.fecho>div{min-width:0;padding:clamp(40px,6vw,88px) clamp(18px,5vw,64px);display:flex;flex-direction:column;justify-content:center}
+.fecho h2{font:400 clamp(28px,3.4vw,42px)/1.15 var(--f-serif);color:var(--verde);margin-top:16px}
+.fecho h2 em{color:var(--salvia-esc)}
+.fecho h3{font:400 clamp(24px,2.6vw,32px)/1.2 var(--f-serif);color:var(--verde);margin-top:16px}
+.fecho p{color:var(--suave);margin-top:14px}
+.fecho p.assina{color:var(--verde);font-weight:600;margin-top:24px}
+.fecho .btn{margin-top:28px;align-self:flex-start}
+.fecho.quem img{object-position:50% 30%}
+
+/* ---------- oferta (faixa escura) ---------- */
+.oferta{background:var(--noite);color:var(--creme);padding-block:clamp(64px,8vw,104px)}
+.oferta .w{display:grid;gap:clamp(36px,5vw,72px);align-items:center}
+@media(min-width:860px){.oferta .w{grid-template-columns:1fr 1fr}}
+.oferta .w>div{min-width:0}
+.pilha{position:relative;max-width:440px;margin-inline:auto;width:100%;aspect-ratio:1/1.05}
+.pilha img{position:absolute;width:64%;object-fit:cover;box-shadow:0 18px 40px -14px rgb(0 0 0/.55)}
+.pilha .p1{left:0;top:2%;aspect-ratio:2/3;z-index:2;rotate:-4deg}
+.pilha .p2{right:0;top:14%;width:58%;aspect-ratio:1008/1428;rotate:5deg}
+.oferta .num{color:var(--salvia)}
+.oferta h2{font:400 clamp(40px,5.2vw,66px)/1 var(--f-serif);margin-top:14px}
+.oferta h3{font-family:var(--f-disp);font-size:18px;line-height:1.35;margin-top:18px;color:var(--creme)}
+.inclui{list-style:none;margin-top:18px;border-top:1px solid var(--linha-esc)}
+.inclui li{padding:14px 0 14px 26px;border-bottom:1px solid var(--linha-esc);position:relative;color:var(--claro-suave);font-size:15px}
+.inclui li b{display:block;color:var(--creme);font-weight:600}
+.inclui li::before{content:"";position:absolute;left:0;top:25px;width:12px;height:3px;border-top:1px solid var(--creme);border-bottom:1px solid var(--salvia)}
+.oferta .investe{margin-top:30px;font:600 11px/1 var(--f-disp);letter-spacing:.22em;text-transform:uppercase;color:var(--salvia)}
+.oferta .compra{margin-top:16px}
+.oferta .aviso{color:var(--claro-suave);font-size:13px;margin-top:16px;font-style:italic}
 
 /* ---------- perguntas ---------- */
 .faq{padding-block:clamp(64px,8vw,100px)}
@@ -154,32 +179,12 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
 .faq dl>div{padding:22px 0;border-bottom:1px solid var(--linha)}
 .faq dt{font:400 21px/1.3 var(--f-serif);color:var(--verde)}
 .faq dd{margin-top:8px;color:var(--suave)}
-
-/* ---------- fecho dividido ---------- */
-.fecho{display:grid;background:var(--papel)}
-@media(min-width:860px){.fecho{grid-template-columns:1fr 1fr}}
-.fecho img{width:100%;height:100%;min-height:320px;aspect-ratio:4/3;object-fit:cover}
-.fecho>div{min-width:0;padding:clamp(40px,6vw,88px) clamp(18px,5vw,64px);display:flex;flex-direction:column;justify-content:center}
-.fecho h2{font:400 clamp(28px,3.4vw,42px)/1.15 var(--f-serif);color:var(--verde);margin-top:16px}
-.fecho h2 em{color:var(--salvia-esc)}
-.fecho p{color:var(--suave);margin-top:16px}
-.fecho .btn{margin-top:28px;align-self:flex-start;background:var(--verde);color:var(--creme)}
-.fecho .btn:hover{background:var(--verde-2)}
+.faq dd+dd{margin-top:10px}
 
 /* ---------- rodapé ---------- */
 .rodape{background:var(--noite);color:var(--claro-suave);font-size:13px}
 .rodape .w{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 28px;padding-block:30px 34px}
 .rodape a{color:var(--creme);text-decoration:none}
-
-/* ---------- novos trechos de copy ---------- */
-.hero p.ritual{margin-top:14px;color:var(--creme);font:italic 400 clamp(18px,1.8vw,21px)/1.4 var(--f-serif)}
-.tese{font:400 clamp(20px,2.2vw,26px)/1.4 var(--f-serif);color:var(--verde);max-width:34em;margin-top:22px}
-.oferta .apoio{color:var(--claro-suave);margin-top:10px;font-size:16px}
-.oferta .formato{color:var(--claro-suave);font-size:14px;margin-top:18px;max-width:30em}
-.combinado h2{font:400 clamp(34px,4.4vw,54px)/1.08 var(--f-serif);letter-spacing:-.01em}
-.combinado h2 span,.combinado h2 em{display:block}
-.combinado h2 em{color:var(--salvia-esc)}
-.combinado p.destaque{color:var(--verde);font-weight:500;margin-top:22px}
 
 /* ---------- animações (inspiradas na referência) ---------- */
 .topo{position:relative;overflow:hidden;isolation:isolate}
@@ -187,22 +192,12 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
 .sinais{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 .orbita{position:absolute;width:1100px;height:680px;right:-450px;top:180px;border:1px solid rgb(183 195 166/.09);border-radius:50%;rotate:-40deg;z-index:0;pointer-events:none}
 .brilho{position:absolute;width:600px;height:700px;right:-100px;top:-150px;background:radial-gradient(ellipse,rgb(86 102 75/.32),transparent 68%);z-index:-1;pointer-events:none}
-.arco{--rx:0deg;--ry:0deg;--py:0px;transform:translateY(var(--py)) perspective(1200px) rotateY(var(--rx)) rotateX(var(--ry));transition:transform .3s ease-out}
-.arco .luz{position:absolute;inset:14px;border-radius:999px 999px 0 0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgb(228 234 184/.16),transparent 50%);mix-blend-mode:screen;pointer-events:none;z-index:1}
-.arco .indice{position:absolute;right:-24px;top:90px;writing-mode:vertical-rl;font:600 8.5px/1 var(--f-disp);letter-spacing:.3em;text-transform:uppercase;color:var(--claro-suave)}
 .btn{transition:background .2s,transform .2s}
 .btn:hover{transform:translateY(-3px)}
-.btn span,.seta span,.abas a span:last-child{transition:transform .2s}
+.btn span{transition:transform .2s}
 .btn:hover span{transform:translate(3px,3px)}
-.seta:hover span{transform:translate(4px,-4px)}
-.abas a{transition:background .2s}
-.abas a:hover{background:var(--salvia-clara)}
-.abas a:hover span:last-child{transform:translate(3px,3px)}
 .folha{--rx:0deg;--ry:0deg;transform:perspective(1000px) rotateY(var(--rx)) rotateX(var(--ry));transition:transform .4s ease-out,rotate .5s ease-out,translate .5s ease-out,box-shadow .5s}
 .folha:hover{rotate:0deg;translate:0 -8px;box-shadow:0 2px 4px rgb(31 58 46/.1),0 36px 60px -26px rgb(31 58 46/.5)}
-.foto{overflow:hidden;--rx:0deg;--ry:0deg;transform:perspective(1200px) rotateY(var(--rx)) rotateX(var(--ry));transition:transform .4s ease-out}
-.foto img{filter:saturate(.55);transition:filter .7s,transform .9s}
-.foto:hover img{filter:saturate(1);transform:scale(1.04)}
 .rv-pronto .rv{opacity:.2;transform:translateY(24px);transition:opacity .75s,transform .75s}
 .rv-pronto .rv.visivel{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
@@ -216,206 +211,263 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
   .fixo{display:block;position:fixed;inset:auto 0 0;z-index:5;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgb(20 36 28/.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
   .fixo .btn{width:100%}
   body{padding-bottom:84px}
-  .abas li+li a{padding-left:0;border-left:0}
-  .abas li+li{border-top:1px solid var(--linha)}
 }
 </style>
 
+<!-- Checkout: ainda é o link do CONECTA antigo. Trocar todos os "pay.hotmart.com/S107878528P" pelo link do CONECTA ELA quando o produto estiver na Hotmart. -->
 <header class="topo">
   <canvas class="sinais" aria-hidden="true"></canvas><div class="orbita" aria-hidden="true"></div><div class="brilho" aria-hidden="true"></div>
   <div class="w">
     <div class="barra">
       <a class="marca" href="#inicio"><img src="img/logo-os-mirandas.png" alt="Os Mirandas" width="460" height="236"></a>
-      <a class="link" href="#oferta">Conheça o CONECTA <span>↗</span></a>
+      <a class="link" href="#oferta">Conheça o CONECTA ELA <span>↗</span></a>
     </div>
     <div class="hero" id="inicio">
       <div>
-        <p class="rot">CONECTA · o livro-experiência</p>
-        <h1>Uma pausa guiada para vocês voltarem <em>um para o outro.</em></h1>
-        <h2>Amar também é saber voltar.</h2>
-        <p class="sub">Para casais que continuam se amando, mas perceberam que a vida começou a exigir tanto que sobrou pouco espaço para cuidar de vocês.</p>
-        <p class="sub ritual">Papel, duas canetas, algo para beber. Celulares longe.</p>
+        <p class="rot">CONECTA ELA</p>
+        <h1>Seu casamento não precisa de uma ocasião especial para receber <em>mais amor.</em></h1>
+        <h2>Precisa de escolhas intencionais no dia a dia.</h2>
+        <p class="sub"><b>Descubra como cultivar mais conexão, carinho e sabedoria no seu casamento em uma jornada devocional de apenas 7 dias.</b></p>
+        <p class="sub">Um convite para mulheres que desejam sair do automático, fortalecer sua vida com Deus e voltar a olhar para o casamento com mais atenção e propósito.</p>
         <div class="compra">
-          <a class="btn" href="https://pay.hotmart.com/S107878528P">Quero viver o CONECTA <span>↘</span></a>
-          <p class="preco"><b>R$ 37</b><span>Acesso imediato</span></p>
+          <a class="btn" href="https://pay.hotmart.com/S107878528P">Quero começar minha jornada <span>↘</span></a>
+          <p class="preco"><b>R$ 37</b><span>Devocional digital</span></p>
         </div>
+        <p class="formato">Devocional digital | 7 dias de reflexão, oração e atitudes práticas</p>
       </div>
-      <figure class="arco" data-depth>
-        <span class="moldura"><img src="img/leandro-fernanda.webp" alt="Leandro e Fernanda Miranda sorrindo juntos num café, com duas xícaras na mesa"><span class="luz" aria-hidden="true"></span></span>
-        <span class="indice" aria-hidden="true">01 / Presença</span>
-        <figcaption><b>Leandro &amp; Fernanda</b><small>Os Mirandas</small></figcaption>
+      <figure class="capa-hero" data-depth>
+        <img src="img/capa-ela.jpg" alt="Capa do CONECTA ELA: 7 dias para edificar seu casamento com sabedoria e intenção" width="1024" height="1536">
+        <figcaption><b>Uma jornada devocional e prática</b><small>Os Mirandas</small></figcaption>
       </figure>
     </div>
     <div class="rodape-hero">
-      <span>Lembrar → Perceber → Reconhecer → Ouvir → Escolher</span>
-      <a href="#caminho">Conheça o caminho ↓</a>
-      <span>17 anos de casamento</span>
+      <span>Reflexão → Oração → Atitude prática</span>
+      <a href="#dias">Conheça os 7 dias ↓</a>
+      <span>Fernanda &amp; Leandro · Os Mirandas</span>
     </div>
   </div>
 </header>
 
 <main>
-<section class="caminho" id="caminho"><div class="w">
+<section class="texto"><div class="w">
   <div class="rv">
-    <p class="rot">O que vocês vão viver</p>
-    <h2>Cinco experiências e <em>um acordo.</em></h2>
-    <p class="tese">Trabalho, filhos, casa, dinheiro, preocupações. Há fases em que tudo parece precisar de vocês ao mesmo tempo. O perigo é passar tanto tempo cuidando da vida que, sem perceber, vocês deixam de cuidar de quem está vivendo essa vida ao lado.</p>
+    <p class="num">A rotina</p>
+    <h2>Vocês se amam. Mas, em meio à rotina, será que ainda estão <em>cuidando desse amor?</em></h2>
   </div>
-  <ul class="abas">
-    <li><a href="#e1"><span><small>01</small>O Museu do Nós</span><span>↘</span></a></li>
-    <li><a href="#e2"><span><small>02</small>Onde foi parar a gente?</span><span>↘</span></a></li>
-    <li><a href="#e3"><span><small>03</small>O que ainda existe aqui</span><span>↘</span></a></li>
-    <li><a href="#e4"><span><small>04</small>O que eu queria…</span><span>↘</span></a></li>
-    <li><a href="#e5"><span><small>05</small>A vida que construímos</span><span>↘</span></a></li>
-  </ul>
-
-  <div class="linha-exp" id="e1">
-    <figure class="foto" data-depth><img src="img/vinil.jpg" alt="Disco de vinil no toca-discos, perto de uma janela" loading="lazy"><b>Lembrar.</b></figure>
-    <div class="rv">
-      <p class="num">01 / O Museu do Nós</p>
-      <h3>Antes de tudo que existe hoje, existe <em>uma história.</em></h3>
-      <p>A música que lembra o outro, o lugar que querem visitar de novo, a piada que só vocês entendem. Antes de qualquer tensão, memória e afeto.</p>
-      <a class="seta" href="#oferta">Quero viver isso <span>↗</span></a>
-    </div>
+  <div class="corpo rv">
+    <p>O casamento começa cheio de expectativas.</p>
+    <p>A vontade de estar perto. As conversas que parecem não ter fim. Os planos para o futuro. A alegria de construir uma vida juntos.</p>
+    <p>Mas então a rotina chega.</p>
+    <p>O trabalho ocupa espaço. As responsabilidades aumentam. Os dias passam depressa.</p>
+    <p>E, sem perceber, muitas conversas começam a girar apenas em torno do que precisa ser resolvido.</p>
+    <p>O carinho fica para depois.</p>
+    <p>Os momentos a dois precisam disputar espaço com a agenda.</p>
+    <p>E aquele relacionamento que vocês escolheram construir pode acabar recebendo apenas o tempo que sobra.</p>
+    <p>Talvez você ame seu marido e saiba que ele também te ama.</p>
+    <p>Mas, no fundo, sente que vocês poderiam viver com mais conexão.</p>
+    <p class="forte">E se o primeiro passo para cultivar essa conexão começasse com uma escolha sua, hoje?</p>
+    <p>Não porque a responsabilidade pelo casamento seja apenas sua.</p>
+    <p>Mas porque você não precisa esperar uma data especial para começar a cuidar daquilo que é importante para você.</p>
   </div>
+</div></section>
 
-  <div class="linha-exp inv" id="e2">
-    <figure class="foto" data-depth><img src="img/cafe.jpg" alt="Xícara de café, caderno e celular sobre uma mesa de madeira" loading="lazy"><b>Perceber.</b></figure>
-    <div class="rv">
-      <p class="num">02 / Onde foi parar a gente?</p>
-      <h3>Às vezes não existe crise. Existe uma vida que ficou <em>cheia demais.</em></h3>
-      <p>A última semana de verdade, sem procurar culpados. Em que momentos alguém perceberia que existe um casal ali, e não apenas duas pessoas cuidando da vida?</p>
-      <a class="seta" href="#oferta">Quero viver isso <span>↗</span></a>
-    </div>
+<section class="texto papel"><div class="w">
+  <div class="rv">
+    <p class="num">Provérbios 14:1</p>
+    <h2>A mulher sábia edifica sua casa. <em>Mas como viver isso na prática?</em></h2>
   </div>
-
-  <div class="linha-exp" id="e3">
-    <figure class="foto" data-depth><img src="img/olhar.jpg" alt="Mãos de um homem e de uma mulher escrevendo em folhas sobre a mesa, com café ao lado" loading="lazy"><b>Reconhecer.</b></figure>
-    <div class="rv">
-      <p class="num">03 / O que ainda existe aqui</p>
-      <h3>A rotina acostuma os olhos. <em>Olhem de novo.</em></h3>
-      <p>O que vocês admiram um no outro hoje, na pessoa que o outro se tornou. O que cada um anda carregando nesta fase sem ser reconhecido. E o que vocês querem que o outro não esqueça.</p>
-      <a class="seta" href="#oferta">Quero viver isso <span>↗</span></a>
-    </div>
+  <div class="corpo rv">
+    <p>Provérbios 14:1 nos lembra do valor da sabedoria na construção do lar.</p>
+    <p>Só que, entre conhecer esse princípio e colocá-lo em prática, existe a vida real.</p>
+    <p>Existem dias cansativos.</p>
+    <p>Conversas difíceis.</p>
+    <p>Diferenças de personalidade.</p>
+    <p>Preocupações.</p>
+    <p>Momentos em que demonstrar carinho não parece tão espontâneo quanto antes.</p>
+    <p>E é justamente nessa rotina que nossas escolhas ganham importância.</p>
+    <p>Edificar o casamento não significa ser perfeita.</p>
+    <p>Não significa concordar com tudo.</p>
+    <p>Muito menos assumir sozinha a responsabilidade de fazer o relacionamento dar certo.</p>
+    <p class="forte">Significa aprender a reconhecer o que está ao seu alcance e escolher cultivar o amor com sabedoria, verdade e intenção.</p>
+    <p class="ponte">Foi pensando nisso que nasceu o CONECTA ELA.</p>
   </div>
+</div></section>
 
-  <div class="linha-exp inv" id="e4">
-    <figure class="foto" data-depth><img src="img/sala.jpg" alt="Duas canecas sobre a mesa de centro de uma sala iluminada" loading="lazy"><b>Ouvir.</b></figure>
-    <div class="rv">
-      <p class="num">04 / O que eu queria que você soubesse</p>
-      <h3>Algumas coisas só nunca encontraram <em>uma boa hora.</em></h3>
-      <p>“Ultimamente eu tenho me sentido…”, “Eu sinto falta de…”. E uma regra simples: antes de responder, dizer o que entendeu.</p>
-      <a class="seta" href="#oferta">Quero viver isso <span>↗</span></a>
-    </div>
+<section class="texto" id="conheca"><div class="w">
+  <div class="rv">
+    <p class="num">Conheça o CONECTA ELA</p>
+    <h2>7 dias para edificar seu casamento <em>com sabedoria e intenção.</em></h2>
   </div>
+  <div class="corpo rv">
+    <p>O CONECTA ELA é uma jornada devocional e prática criada para mulheres casadas que desejam fortalecer sua conexão com Deus e cultivar atitudes que contribuam para um relacionamento mais próximo, carinhoso e intencional.</p>
+    <p>Durante sete dias, você será convidada a olhar para situações comuns do casamento à luz da Palavra.</p>
+    <p>Cada dia apresenta uma reflexão, perguntas para sua realidade, uma atitude prática e uma oração.</p>
+    <p>Tudo pensado para ajudar você a transformar aquilo que aprende em pequenas escolhas dentro da sua rotina.</p>
+    <p class="forte">Sem fórmulas mágicas. Sem promessas de mudar seu marido. Sem a cobrança de ser uma esposa perfeita.</p>
+    <p>Apenas um caminho possível para começar a viver o casamento com mais consciência, fé e intenção.</p>
+    <a class="btn btn-escuro" href="https://pay.hotmart.com/S107878528P">Quero viver esses 7 dias <span>↘</span></a>
+  </div>
+</div></section>
 
-  <div class="linha-exp" id="e5">
-    <figure class="foto" data-depth><img src="img/estrada.jpg" alt="Estrada vazia seguindo até o horizonte numa manhã enevoada" loading="lazy"><b>Escolher.</b></figure>
-    <div class="rv">
-      <p class="num">05 / A vida que estamos construindo</p>
-      <h3>A vida de vocês não começa quando esta fase passar. <em>Ela já está acontecendo.</em></h3>
-      <p>Que casamento vocês querem continuar vivendo dentro da vida que estão construindo, e como atravessar esta fase sem desaparecer um para o outro. No fim, um acordo: proteger, parar, voltar. E o sinal de volta de vocês.</p>
-      <a class="seta" href="#oferta">Quero viver isso <span>↗</span></a>
-    </div>
+<section class="dias" id="dias"><div class="w">
+  <div class="rv">
+    <p class="rot">A jornada</p>
+    <h2>O que você vai descobrir <em>durante os 7 dias</em></h2>
+  </div>
+  <ol>
+    <li class="rv"><small>Dia 01</small><h3>A escolha começa em mim</h3><span class="ref">Provérbios 14:1</span><p>Entenda como suas escolhas podem contribuir para a construção do relacionamento que você deseja cultivar, sem assumir responsabilidades que pertencem aos dois.</p></li>
+    <li class="rv"><small>Dia 02</small><h3>O poder das minhas palavras</h3><span class="ref">Provérbios 15:1</span><p>Reflita sobre a maneira como você se comunica e descubra o valor de escolher palavras que favoreçam o respeito e a aproximação, mesmo nas conversas difíceis.</p></li>
+    <li class="rv"><small>Dia 03</small><h3>Enxergar o homem que está ao meu lado</h3><span class="ref">Filipenses 2:4</span><p>Aprenda a olhar para seu marido com mais atenção, reconhecendo suas necessidades, qualidades e particularidades além das demandas da rotina.</p></li>
+    <li class="rv"><small>Dia 04</small><h3>Amar também é agir</h3><span class="ref">1 João 3:18</span><p>Perceba como o amor pode ser demonstrado em atitudes concretas, mesmo nos dias comuns, quando não há grandes acontecimentos.</p></li>
+    <li class="rv"><small>Dia 05</small><h3>Quando foi a última vez que você escolheu seu marido?</h3><span class="ref">Cântico dos Cânticos 4:1</span><p>Reflita sobre admiração, carinho e a importância de continuar demonstrando interesse por quem caminha ao seu lado.</p></li>
+    <li class="rv"><small>Dia 06</small><h3>O amor precisa de espaço</h3><span class="ref">Eclesiastes 3:1</span><p>Reconheça a importância de reservar tempo e atenção para o relacionamento em meio às responsabilidades do dia a dia.</p></li>
+    <li class="rv"><small>Dia 07</small><h3>Continuar escolhendo, todos os dias</h3><span class="ref">Colossenses 3:14</span><p>Reúna os aprendizados da jornada e descubra como transformar pequenas atitudes em escolhas que podem continuar fazendo parte da sua vida.</p></li>
+  </ol>
+</div></section>
+
+<section class="combinado"><div class="w">
+  <div class="rv">
+    <p class="num">Em cada dia</p>
+    <p class="ico" aria-hidden="true">↗</p>
+    <h2><span>Não é apenas uma leitura.</span> <em>É um convite para sair do automático.</em></h2>
+    <p class="destaque">Em cada dia do CONECTA ELA, você encontrará:</p>
+    <p>Você não precisa reservar horas do seu dia nem mudar toda a sua rotina.</p>
+    <p class="destaque">Precisa apenas separar um momento para ler, refletir e escolher como deseja colocar aquele aprendizado em prática.</p>
+  </div>
+  <div class="folha" data-depth>
+    <p class="num"><span>Em cada dia</span><span>CONECTA ELA</span></p>
+    <ol>
+      <li><span><b>A Palavra de hoje</b>Um versículo bíblico para orientar a reflexão.</span></li>
+      <li><span><b>Reflexão e um olhar para a Palavra</b>Uma conversa próxima sobre situações reais do casamento e os princípios que podemos aprender nas Escrituras.</span></li>
+      <li><span><b>Olhe para sua rotina</b>Perguntas para ajudar você a reconhecer como aquele tema aparece em sua própria história.</span></li>
+      <li><span><b>Sua escolha de hoje</b>Uma atitude prática para experimentar no dia a dia.</span></li>
+      <li><span><b>Uma oração para hoje</b>Um momento para apresentar a Deus seus sentimentos, aprendizados e desejos.</span></li>
+      <li><span><b>Para guardar no coração</b>Uma mensagem para levar com você além da leitura.</span></li>
+    </ol>
+  </div>
+</div></section>
+
+<section class="bonus" id="bonus"><div class="w">
+  <img class="capa-bonus rv" src="img/bonus-ela.png" alt="Capa do bônus Mulheres da Bíblia para te inspirar" width="1008" height="1428" loading="lazy">
+  <div class="rv">
+    <p class="num">E sua jornada não termina no sétimo dia</p>
+    <h3>Você também recebe um bônus especial:</h3>
+    <h2>Mulheres da Bíblia <em>para te inspirar</em></h2>
+    <p class="apoio">5 histórias de fé, sabedoria e escolhas que podem transformar a maneira como você vive seu casamento.</p>
+    <p>Um material complementar para conhecer mulheres da Bíblia e refletir sobre como os princípios presentes em suas histórias podem inspirar suas atitudes na vida conjugal.</p>
+    <h3>Você vai aprender com:</h3>
+    <ul class="mulheres">
+      <li><b>Rute — Lealdade e compromisso</b><span>O valor de cultivar integridade, confiança e constância nas pequenas escolhas.</span></li>
+      <li><b>Priscila — Parceria e propósito</b><span>A importância de construir uma caminhada em que marido e esposa reconheçam o valor um do outro.</span></li>
+      <li><b>Ana — Fé e perseverança</b><span>Como levar suas dores a Deus com sinceridade e cultivar espaço para o diálogo no casamento.</span></li>
+      <li><b>Sara — Confiança durante a caminhada</b><span>Uma reflexão sobre expectativas, incertezas e o cuidado com a relação enquanto os planos ainda não se realizaram.</span></li>
+      <li><b>Maria de Betânia — Presença e prioridades</b><span>O valor de reconhecer o que realmente importa e reservar atenção para Deus e para os relacionamentos que desejamos cultivar.</span></li>
+    </ul>
+    <p>Cada história traz reflexão, aplicação ao casamento, perguntas pessoais, uma atitude prática e uma oração.</p>
+    <p class="fecho-bonus">Um complemento para você continuar crescendo como mulher diante de Deus e levando esse crescimento para a sua vida a dois.</p>
+  </div>
+</div></section>
+
+<section class="texto"><div class="w">
+  <div class="rv">
+    <p class="num">Para quem é</p>
+    <h2>Para quem é o <em>CONECTA ELA?</em></h2>
+  </div>
+  <div class="corpo rv">
+    <p>Este devocional é para você que ama seu marido, mas percebe que a correria tem roubado espaço dos momentos de conexão.</p>
+    <p>Para você que deseja fortalecer seu casamento sem esperar que tudo esteja perfeito.</p>
+    <p>Para você que acredita que a Palavra de Deus pode orientar suas escolhas também dentro de casa.</p>
+    <p>Para você que quer demonstrar mais carinho, cultivar admiração, melhorar a comunicação e reservar tempo para a relação.</p>
+    <p>E também para você que vive um bom casamento, mas sabe que <b>aquilo que é precioso merece continuar sendo cuidado.</b></p>
+    <p class="forte">Você não precisa estar enfrentando uma crise para começar.</p>
+    <p>O CONECTA ELA foi pensado para o cuidado intencional do relacionamento no cotidiano. Ele não substitui aconselhamento ou ajuda especializada em situações de violência, abuso ou conflitos graves.</p>
+  </div>
+</div></section>
+
+<section class="fecho quem">
+  <img src="img/leandro-fernanda.webp" alt="Leandro e Fernanda Miranda sorrindo juntos num café, com duas xícaras na mesa" loading="lazy">
+  <div class="rv">
+    <p class="num">Quem está por trás do CONECTA ELA?</p>
+    <h2>Prazer, somos <em>Os Mirandas ♡</em></h2>
+    <p>Somos Fernanda e Leandro.</p>
+    <p>Acreditamos que o casamento não é construído apenas nos grandes momentos, mas também nas escolhas que fazemos quando a vida está acontecendo de verdade.</p>
+    <p>Entre responsabilidades, diferenças, planos e rotina, aprendemos a valorizar a importância de continuar cuidando da nossa conexão.</p>
+    <p>Foi desse desejo de olhar para o casamento com mais intenção que nasceu o CONECTA.</p>
+    <p>E o CONECTA ELA é um convite especial para mulheres que desejam viver essa jornada à luz da Palavra de Deus.</p>
+    <p>Não queremos apresentar um casamento perfeito.</p>
+    <p>Queremos compartilhar reflexões e práticas que incentivem escolhas mais conscientes, amorosas e sábias na vida a dois.</p>
+    <p class="assina">Com carinho, Fernanda e Leandro — Os Mirandas ♡</p>
+  </div>
+</section>
+
+<section class="texto"><div class="w">
+  <div class="rv">
+    <p class="num">O momento ideal</p>
+    <h2>Seu casamento merece mais do que <em>o tempo que sobra.</em></h2>
+  </div>
+  <div class="corpo rv">
+    <p>Talvez você esteja esperando a rotina ficar mais tranquila.</p>
+    <p>As responsabilidades diminuírem.</p>
+    <p>O momento ideal chegar.</p>
+    <p>Mas a verdade é que a vida sempre terá alguma coisa pedindo sua atenção.</p>
+    <p>E, enquanto esperamos pelo momento perfeito, pequenas oportunidades de conexão podem passar despercebidas.</p>
+    <p>Você não precisa resolver tudo em sete dias.</p>
+    <p>Não precisa mudar a personalidade do seu marido.</p>
+    <p>Não precisa acertar em todas as escolhas.</p>
+    <p class="forte">Você só precisa estar disposta a começar com aquilo que está ao seu alcance.</p>
+    <p class="ponte">O CONECTA ELA foi criado para acompanhar você nesse começo.</p>
   </div>
 </div></section>
 
 <section class="oferta" id="oferta"><div class="w">
   <div class="pilha" aria-hidden="true">
-    <img class="p1" src="img/musica.jpg" alt="">
-    <img class="p3" src="img/tesouro.jpg" alt="">
-    <img class="p2" src="img/capa.jpg" alt="">
+    <img class="p2" src="img/bonus-ela.png" alt="">
+    <img class="p1" src="img/capa-ela.jpg" alt="">
   </div>
   <div class="rv">
-    <p class="num">O livro-experiência</p>
-    <h2>CONECTA</h2>
-    <h3>Uma experiência para dois.</h3>
-    <p class="apoio">Papel, caneta e algumas conversas que a rotina costuma adiar.</p>
+    <p class="num">Comece sua jornada hoje</p>
+    <h2>CONECTA ELA</h2>
+    <h3>Ao adquirir o CONECTA ELA, você recebe:</h3>
     <ul class="inclui">
-      <li>Cinco experiências guiadas</li>
-      <li>Espaço para escrever em cada exercício</li>
-      <li>Um acordo: proteger, parar, voltar</li>
-      <li>O sinal de volta de vocês, para guardar</li>
-      <li>Orientações para quando uma conversa esquentar</li>
-      <li>Duas orações e uma carta de Leandro e Fernanda</li>
-      <li>3 bônus especiais, sem custo adicional</li>
+      <li><b>CONECTA ELA — Devocional digital de 7 dias</b>Uma jornada com reflexões bíblicas, perguntas, atitudes práticas e orações para cultivar sabedoria e intenção no casamento.</li>
+      <li><b>BÔNUS — Mulheres da Bíblia para te inspirar</b>Cinco histórias bíblicas com reflexões e aplicações práticas para sua vida conjugal.</li>
+      <li><b>Tudo em formato digital</b>Para você acessar e realizar as leituras no seu próprio ritmo.</li>
     </ul>
-    <p class="formato">Vocês recebem o CONECTA em formato digital, com acesso imediato, para usar na tela ou imprimir.</p>
+    <p class="investe">Seu investimento</p>
     <div class="compra">
-      <a class="btn" href="https://pay.hotmart.com/S107878528P">Quero viver o CONECTA <span>↘</span></a>
-      <p class="preco"><b>R$ 37</b><span>Acesso imediato</span></p>
+      <p class="preco"><b>R$ 37,00</b></p>
+      <a class="btn" href="https://pay.hotmart.com/S107878528P">Sim, quero meu CONECTA ELA <span>↘</span></a>
     </div>
-  </div>
-</div></section>
-
-<section class="bonus" id="bonus"><div class="w">
-  <p class="num">Bônus</p>
-  <h2>E vocês ainda recebem <em>3 bônus especiais</em></h2>
-  <ul class="bonus-lista">
-    <li class="rv">
-      <img src="img/bonus-1.jpg" alt="Capa do bônus O Convite: mãos entregando um cartão sobre a mesa" loading="lazy">
-      <small>Bônus 01</small>
-      <h3>O Convite</h3>
-      <p>Um guia para convidar quem você ama a viver o CONECTA de forma leve e natural.</p>
-    </li>
-    <li class="rv">
-      <img src="img/bonus-2.jpg" alt="Capa do bônus Preparando Nosso Encontro: sofá aconchegante com manta, vela e duas canecas" loading="lazy">
-      <small>Bônus 02</small>
-      <h3>Preparando Nosso Encontro</h3>
-      <p>Orientações simples para organizar um momento confortável, sem complicação.</p>
-    </li>
-    <li class="rv">
-      <img src="img/bonus-3.jpg" alt="Capa do bônus Sete Orações: mãos do casal unidas sobre a Bíblia aberta" loading="lazy">
-      <small>Bônus 03</small>
-      <h3>Sete Orações para Continuar Escolhendo Nós</h3>
-      <p>Orações para cultivar fé, gratidão, parceria e cuidado nos dias seguintes.</p>
-    </li>
-  </ul>
-  <p class="incluso">Os três bônus estão incluídos no CONECTA, sem custo adicional.</p>
-  <a class="btn" href="https://pay.hotmart.com/S107878528P">Quero viver o CONECTA <span>↘</span></a>
-</div></section>
-
-<section class="combinado"><div class="w">
-  <div class="rv">
-    <p class="num">Como funciona</p>
-    <p class="ico" aria-hidden="true">↗</p>
-    <h2><span>O CONECTA conduz.</span> <span>O papel recebe.</span> <em>O casal conversa.</em></h2>
-    <p class="destaque">O CONECTA não foi feito para ser lido. Foi feito para fazer vocês conversarem.</p>
-    <p>Sem questionário enviado, sem análise de ninguém, sem pontuação. As respostas ficam no papel de vocês.</p>
-  </div>
-  <div class="folha" data-depth>
-    <p class="num"><span>O combinado</span><span>CONECTA</span></p>
-    <blockquote>Não estamos aqui para vencer uma discussão. Primeiro, escutem.</blockquote>
-    <ol>
-      <li>Cada um escreve sozinho, sem mostrar.</li>
-      <li>O CONECTA avisa a hora de revelar.</li>
-      <li>Se uma pergunta virar uma conversa de quarenta minutos, fiquem nela. Dá para parar e continuar outro dia.</li>
-    </ol>
+    <p class="aviso">O acesso e as condições de compra serão apresentados na finalização do pedido.</p>
   </div>
 </div></section>
 
 <section class="faq"><div class="w">
   <div class="rv">
-    <p class="num">Perguntas</p>
+    <p class="num">Perguntas frequentes</p>
     <h2>Antes de começar.</h2>
   </div>
   <dl>
-    <div><dt>É um curso?</dt><dd>Não. O CONECTA não tem aulas, vídeos ou conteúdo para estudar. É uma experiência guiada que vocês recebem em formato digital e percorrem juntos, com papel e caneta.</dd></div>
-    <div><dt>Quanto tempo leva?</dt><dd>Não existe tempo certo. Algumas perguntas levam poucos minutos, outras abrem conversas longas. Dá para fazer tudo de uma vez ou continuar outro dia.</dd></div>
-    <div><dt>Precisamos estar em crise?</dt><dd>Não. Vocês não precisam esperar o casamento ficar ruim. É para casais que continuam se amando, mas sentem que trabalho, filhos, casa, dinheiro e preocupações começaram a ocupar espaço demais entre os dois.</dd></div>
-    <div><dt>É só para casais que trabalham juntos?</dt><dd>Não. Nós somos casados e sócios há 17 anos, mas o CONECTA é para qualquer casal que queira parar por algumas horas e voltar a prestar atenção um no outro.</dd></div>
-    <div><dt>O CONECTA é cristão?</dt><dd>Sim. Nasce da nossa fé em Cristo: começa e termina com oração e traz dois textos bíblicos que aprofundam a conversa. Não é um devocional.</dd></div>
-    <div><dt>Substitui terapia?</dt><dd>Não. É uma experiência de reflexão e conversa. Se a relação envolve medo, violência, coerção ou risco, procurem apoio seguro e apropriado.</dd></div>
+    <div><dt>Preciso fazer os sete dias seguidos?</dt><dd>Não. A proposta é uma jornada de sete dias, mas você pode seguir no seu ritmo. Se perder um dia, basta retomar quando puder.</dd></div>
+    <div><dt>Meu marido precisa participar?</dt><dd>Não. O CONECTA ELA foi desenvolvido para a mulher realizar individualmente. Algumas reflexões e atitudes podem abrir espaço para momentos compartilhados, mas a participação dele não é obrigatória.</dd></div>
+    <div><dt>O devocional é indicado apenas para casamentos em crise?</dt><dd>Não. Ele também é para mulheres que vivem um relacionamento saudável e desejam continuar cultivando conexão, carinho e intencionalidade.</dd></div>
+    <div><dt>O CONECTA ELA é um curso em vídeo?</dt><dd>Não. É um material digital de leitura e reflexão, com propostas práticas e espaços para registrar suas respostas.</dd></div>
+    <div><dt>Preciso ter muito conhecimento da Bíblia?</dt><dd>Não. As reflexões foram escritas em uma linguagem acessível e apresentam referências bíblicas para acompanhar cada tema.</dd></div>
+    <div><dt>O CONECTA ELA garante mudanças no meu casamento?</dt><dd>Nenhum material pode garantir mudanças no comportamento de outra pessoa ou resultados específicos em um relacionamento.</dd><dd>O propósito do devocional é ajudar você a refletir, fortalecer sua caminhada com Deus e cultivar atitudes intencionais dentro daquilo que está ao seu alcance.</dd></div>
   </dl>
 </div></section>
 
 <section class="fecho">
   <img src="img/papeis.jpg" alt="Mesa de madeira com duas folhas em branco e duas canetas, uma de cada lado" loading="lazy">
   <div class="rv">
-    <p class="num">Sem pressa. Sem resposta certa. Sem nota.</p>
-    <h2>Não esperem a vida ficar tranquila para voltarem <em>um para o outro.</em></h2>
-    <p>CONECTA · R$ 37 · acesso imediato</p>
-    <a class="btn" href="https://pay.hotmart.com/S107878528P">Quero viver o CONECTA <span>↘</span></a>
+    <p class="num">CONECTA ELA</p>
+    <h2>O amor também se cultiva <em>nas pequenas escolhas.</em></h2>
+    <p>Você pode continuar esperando uma ocasião especial para dedicar mais atenção ao seu casamento.</p>
+    <p>Ou pode decidir que hoje já é um bom dia para começar.</p>
+    <p class="assina">O casamento é uma construção compartilhada. Mas, se você pode escolher dar o primeiro passo, por que esperar?</p>
+    <h3>7 dias para edificar seu casamento com sabedoria e intenção.</h3>
+    <a class="btn btn-escuro" href="https://pay.hotmart.com/S107878528P">Quero começar agora <span>↘</span></a>
+    <p><em>Uma jornada devocional e prática de Os Mirandas ♡</em></p>
   </div>
 </section>
 </main>
@@ -424,11 +476,11 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
   <span><a href="#inicio">Os Mirandas</a> · Casamento &amp; Rotina</span>
   <span>Instagram <a href="https://instagram.com/osmiirandas">@osmiirandas</a></span>
 </div></footer>
-<div class="fixo"><a class="btn" href="https://pay.hotmart.com/S107878528P">Quero viver o CONECTA <span>↘</span></a></div>
+<div class="fixo"><a class="btn" href="https://pay.hotmart.com/S107878528P">Quero começar minha jornada <span>↘</span></a></div>
 
 <script>
 'use strict';
-/* Animações no espírito da referência: surgimento ao rolar, foto do arco com profundidade 3D e luz que segue o cursor,
+/* Animações no espírito da referência: surgimento ao rolar, capa com profundidade 3D,
    parallax suave no topo e um campo de sinais desenhado só quando o mouse se mexe (sem loop permanente). */
 (function(){
   const calmo=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -446,16 +498,15 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
       el.addEventListener('pointermove',e=>{
         const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
         el.style.setProperty('--rx',`${(x-.5)*7}deg`);el.style.setProperty('--ry',`${(y-.5)*-5}deg`);
-        el.style.setProperty('--mx',`${x*100}%`);el.style.setProperty('--my',`${y*100}%`);
       });
       el.addEventListener('pointerleave',()=>{el.style.setProperty('--rx','0deg');el.style.setProperty('--ry','0deg');});
     });
   }
 
-  const arco=document.querySelector('.arco');
-  if(!calmo&&arco){
+  const capa=document.querySelector('.capa-hero');
+  if(!calmo&&capa){
     let pendente=false;
-    const mover=()=>{arco.style.setProperty('--py',largo.matches?`${Math.min(window.scrollY,850)*.045}px`:'0px');pendente=false;};
+    const mover=()=>{capa.style.setProperty('--py',largo.matches?`${Math.min(window.scrollY,850)*.045}px`:'0px');pendente=false;};
     window.addEventListener('scroll',()=>{if(!pendente&&window.scrollY<1100){requestAnimationFrame(mover);pendente=true;}},{passive:true});
   }
 

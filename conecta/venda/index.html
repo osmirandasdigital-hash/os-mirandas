@@ -8,6 +8,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap">
+<!-- Meta Pixel "Dados" (2898104873714319): conta visitas à página (PageView) e cliques nos botões de compra (InitiateCheckout, com o nome do botão) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2898104873714319');fbq('track','PageView');
+document.addEventListener('click',function(e){var a=e.target.closest('a[data-botao]');if(a)fbq('track','InitiateCheckout',{content_name:'CONECTA ELA',value:37,currency:'BRL',botao:a.dataset.botao});});
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=2898104873714319&ev=PageView&noscript=1"></noscript>
 <style>
 /* Layout: topo escuro com a capa · faixas creme de texto · os 7 dias · faixa sálvia com a estrutura de cada dia em papel ·
    bônus · para quem é · quem somos · oferta na faixa escura · perguntas · fecho dividido foto/texto · rodapé escuro.
@@ -234,7 +241,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
         <p class="sub"><b>Descubra como cultivar mais conexão, carinho e sabedoria no seu casamento em uma jornada devocional de apenas 7 dias.</b></p>
         <p class="sub">Um convite para mulheres que desejam sair do automático, fortalecer sua vida com Deus e voltar a olhar para o casamento com mais atenção e propósito.</p>
         <div class="compra">
-          <a class="btn" href="https://pay.hotmart.com/S107878528P">Quero começar minha jornada <span>↘</span></a>
+          <a class="btn" href="https://pay.hotmart.com/S107878528P?src=venda-topo" data-botao="topo">Quero começar minha jornada <span>↘</span></a>
           <p class="preco"><b>R$ 37</b><span>Devocional digital</span></p>
         </div>
         <p class="formato">Devocional digital | 7 dias de reflexão, oração e atitudes práticas | Garantia de 7 dias</p>
@@ -309,7 +316,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
     <p>Tudo pensado para ajudar você a transformar aquilo que aprende em pequenas escolhas dentro da sua rotina.</p>
     <p class="forte">Sem fórmulas mágicas. Sem promessas de mudar seu marido. Sem a cobrança de ser uma esposa perfeita.</p>
     <p>Apenas um caminho possível para começar a viver o casamento com mais consciência, fé e intenção.</p>
-    <a class="btn btn-escuro" href="https://pay.hotmart.com/S107878528P">Quero viver esses 7 dias <span>↘</span></a>
+    <a class="btn btn-escuro" href="https://pay.hotmart.com/S107878528P?src=venda-depois-texto" data-botao="depois-texto">Quero viver esses 7 dias <span>↘</span></a>
   </div>
 </div></section>
 
@@ -440,7 +447,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
     <p class="investe">Seu investimento</p>
     <div class="compra">
       <p class="preco"><b>R$ 37,00</b></p>
-      <a class="btn" href="https://pay.hotmart.com/S107878528P">Sim, quero meu CONECTA ELA <span>↘</span></a>
+      <a class="btn" href="https://pay.hotmart.com/S107878528P?src=venda-oferta" data-botao="oferta">Sim, quero meu CONECTA ELA <span>↘</span></a>
     </div>
     <p class="seguro">Compra segura pela Hotmart · Garantia de 7 dias</p>
     <div class="garantia">
@@ -476,7 +483,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
     <p>Ou pode decidir que hoje já é um bom dia para começar.</p>
     <p class="assina">O casamento é uma construção compartilhada. Mas, se você pode escolher dar o primeiro passo, por que esperar?</p>
     <h3>7 dias para edificar seu casamento com sabedoria e intenção.</h3>
-    <a class="btn btn-escuro" href="https://pay.hotmart.com/S107878528P">Quero começar agora <span>↘</span></a>
+    <a class="btn btn-escuro" href="https://pay.hotmart.com/S107878528P?src=venda-final" data-botao="final">Quero começar agora <span>↘</span></a>
     <p><em>Uma jornada devocional e prática de Os Mirandas ♡</em></p>
   </div>
 </section>
@@ -486,7 +493,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
   <span><a href="#inicio">Os Mirandas</a> · Casamento &amp; Rotina</span>
   <span>Instagram <a href="https://instagram.com/osmiirandas">@osmiirandas</a></span>
 </div></footer>
-<div class="fixo"><a class="btn" href="https://pay.hotmart.com/S107878528P">Quero começar minha jornada <span>↘</span></a></div>
+<div class="fixo"><a class="btn" href="https://pay.hotmart.com/S107878528P?src=venda-fixo-celular" data-botao="fixo-celular">Quero começar minha jornada <span>↘</span></a></div>
 
 <script>
 'use strict';

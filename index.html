@@ -196,15 +196,22 @@
     mensagemWhatsapp: "Oi! Vim pelo Instagram e quero saber mais.",
     email: "osmirandasdigital@gmail.com",
 
-    // Cartão em destaque do produto (logo abaixo do teste gratuito)
-    produto: {
+    // Cartões em destaque dos produtos (logo abaixo do teste gratuito), na ordem da lista
+    produtos: [{
       link: "conecta/venda/",                  // página de vendas do CONECTA ELA
       selo: "Novo",
       titulo: "CONECTA ELA",
       descricao: "7 dias para edificar seu casamento com sabedoria e intenção.",
       chamada: "Quero conhecer",
       capa: "conecta/venda/img/capa-ela.jpg",
-    },
+    }, {
+      link: "conecta/ele/",                    // página de vendas do CONECTA ELE
+      selo: "Novo",
+      titulo: "CONECTA ELE",
+      descricao: "7 dias para fortalecer seu casamento com fé, atitude e intenção.",
+      chamada: "Quero conhecer",
+      capa: "conecta/ele/img/capa-ele-v2.png",
+    }],
 
     // Teste gratuito (o primeiro da lista)
     quiz: {
@@ -259,8 +266,9 @@
       href: c.quiz.link, icon: "quiz", title: c.quiz.titulo, sub: c.quiz.descricao, cls: "quiz", badge: c.quiz.selo,
     }));
   }
-  if (c.produto.link) {
-    const p = c.produto, a = document.createElement("a");
+  for (const p of c.produtos) {
+    if (!p.link) continue;
+    const a = document.createElement("a");
     a.className = "destaque";
     a.href = p.link;
     a.innerHTML =

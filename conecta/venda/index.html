@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>CONECTA ELA · Os Mirandas</title>
 <meta name="description" content="CONECTA ELA: uma jornada devocional de 7 dias para mulheres que desejam cultivar mais conexão, carinho e sabedoria no casamento.">
-<!-- Página de venda do CONECTA ELA · v4 · mesma estrutura visual da v3 (referência Black Boutique, identidade Os Mirandas), copy nova do produto -->
+<!-- Página de venda do CONECTA ELA · v5 · mesma estrutura visual, copy reestruturada em 9 dobras (23/10) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap">
@@ -223,9 +223,27 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
   .fixo .btn{width:100%}
   body{padding-bottom:84px}
 }
+
+/* ---------- v5: copy nova (lead do topo, imagem das páginas, fechamento com preço, rodapé) ---------- */
+.hero p.pre{font:italic 400 clamp(19px,1.9vw,23px)/1.35 var(--f-serif);color:var(--salvia);margin-top:24px}
+.hero p.pre+h1{margin-top:12px}
+.hero p.lead{font:500 clamp(18px,1.8vw,21px)/1.45 var(--f-disp);color:var(--creme);max-width:30em;margin-top:22px}
+.hero .preco span{margin:0 0 8px;font:600 11px/1.3 var(--f-disp);letter-spacing:.16em;text-transform:uppercase;color:var(--salvia)}
+.oferta .preco span{margin-top:8px}
+.combinado img.paginas{display:block;width:100%;max-width:520px;margin-top:30px;border-radius:6px;box-shadow:0 24px 50px -28px rgb(31 58 46/.5)}
+.fecho.quem p.destaque-quem{color:var(--verde);font-weight:600;margin-top:22px}
+.fecho .nome-final{margin-top:30px;font:500 13px/1 var(--f-disp);letter-spacing:.3em;color:var(--terracota)}
+.fecho .nome-final+h3{margin-top:10px}
+.fecho .preco-final{font:400 36px/1 var(--f-serif);color:var(--verde);margin-top:18px}
+.folha .num{line-height:1.6}
+.rodape .w{align-items:flex-start}
+.rodape p+p{margin-top:6px}
+.rodape .rod-marca{font:600 11px/1.4 var(--f-disp);letter-spacing:.24em;text-transform:uppercase;color:var(--creme)}
+@media(min-width:760px){.rodape .rod-dir{text-align:right}}
+.faq .aviso{grid-column:1/-1;font-size:13px;line-height:1.6;color:var(--suave);font-style:italic;margin-top:-8px}
+@media(min-width:900px){.faq .aviso{grid-column:2}}
 </style>
 
-<!-- Checkout: ainda é o link do CONECTA antigo. Trocar todos os "pay.hotmart.com/S107878528P" pelo link do CONECTA ELA quando o produto estiver na Hotmart. -->
 <header class="topo">
   <canvas class="sinais" aria-hidden="true"></canvas><div class="orbita" aria-hidden="true"></div><div class="brilho" aria-hidden="true"></div>
   <div class="w">
@@ -235,16 +253,17 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
     </div>
     <div class="hero" id="inicio">
       <div>
-        <p class="rot">CONECTA ELA</p>
-        <h1>Seu casamento não precisa de uma ocasião especial para receber <em>mais amor.</em></h1>
-        <h2>Precisa de escolhas intencionais no dia a dia.</h2>
-        <p class="sub"><b>Descubra como cultivar mais conexão, carinho e sabedoria no seu casamento em uma jornada devocional de apenas 7 dias.</b></p>
-        <p class="sub">Um convite para mulheres que desejam sair do automático, fortalecer sua vida com Deus e voltar a olhar para o casamento com mais atenção e propósito.</p>
+        <p class="rot">Devocional para mulheres · Os Mirandas</p>
+        <p class="pre">Você cuida de tanta coisa. E do seu casamento?</p>
+        <h1>Seu casamento merece mais do que <em>o tempo que sobra.</em></h1>
+        <p class="lead">7 dias de reflexões bíblicas e atitudes práticas para cultivar mais conexão, carinho e sabedoria no seu casamento.</p>
+        <p class="sub">Você ama seu marido, mas sente que, entre tantas responsabilidades, o relacionamento às vezes fica para depois?</p>
+        <p class="sub">O CONECTA ELA é uma jornada devocional para mulheres que desejam fortalecer sua caminhada com Deus e cuidar do casamento com mais intenção, mesmo em meio à rotina.</p>
         <div class="compra">
+          <p class="preco"><span>Devocional digital + bônus especial</span><b>R$ 37,00</b></p>
           <a class="btn" href="https://pay.hotmart.com/S107878528P?checkoutMode=10&src=venda-topo" data-botao="topo">Quero começar minha jornada <span>↘</span></a>
-          <p class="preco"><b>R$ 37</b><span>Devocional digital</span></p>
         </div>
-        <p class="formato">Devocional digital | 7 dias de reflexão, oração e atitudes práticas | Garantia de 7 dias</p>
+        <p class="formato">Pagamento único · Garantia de 7 dias · Compra segura pela Hotmart</p>
       </div>
       <figure class="capa-hero" data-depth>
         <img src="img/capa-ela.jpg" alt="Capa do CONECTA ELA: 7 dias para edificar seu casamento com sabedoria e intenção" width="1024" height="1536">
@@ -260,173 +279,138 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
 </header>
 
 <main>
+<!-- 02 · A ROTINA -->
 <section class="texto"><div class="w">
   <div class="rv">
     <p class="num">A rotina</p>
-    <h2>Vocês se amam. Mas, em meio à rotina, será que ainda estão <em>cuidando desse amor?</em></h2>
+    <h2>Vocês se amam. Mas ainda estão <em>cuidando desse amor?</em></h2>
   </div>
   <div class="corpo rv">
     <p>O casamento começa cheio de expectativas.</p>
-    <p>A vontade de estar perto. As conversas que parecem não ter fim. Os planos para o futuro. A alegria de construir uma vida juntos.</p>
-    <p>Mas então a rotina chega.</p>
-    <p>O trabalho ocupa espaço. As responsabilidades aumentam. Os dias passam depressa.</p>
-    <p>E, sem perceber, muitas conversas começam a girar apenas em torno do que precisa ser resolvido.</p>
-    <p>O carinho fica para depois.</p>
-    <p>Os momentos a dois precisam disputar espaço com a agenda.</p>
-    <p>E aquele relacionamento que vocês escolheram construir pode acabar recebendo apenas o tempo que sobra.</p>
-    <p>Talvez você ame seu marido e saiba que ele também te ama.</p>
-    <p>Mas, no fundo, sente que vocês poderiam viver com mais conexão.</p>
-    <p class="forte">E se o primeiro passo para cultivar essa conexão começasse com uma escolha sua, hoje?</p>
-    <p>Não porque a responsabilidade pelo casamento seja apenas sua.</p>
-    <p>Mas porque você não precisa esperar uma data especial para começar a cuidar daquilo que é importante para você.</p>
+    <p>As conversas que parecem não ter fim. Os planos para o futuro. A alegria de construir uma vida juntos.</p>
+    <p>Mas, com o tempo, a rotina ganha espaço.</p>
+    <p>O trabalho, a casa, os compromissos e as responsabilidades passam a ocupar boa parte dos dias.</p>
+    <p>As conversas começam a girar em torno do que precisa ser resolvido.</p>
+    <p class="forte">O carinho fica para depois. Os momentos a dois também.</p>
+    <p>E, sem perceber, aquele relacionamento que vocês escolheram construir pode acabar recebendo apenas o tempo que sobra.</p>
+    <p>Talvez vocês continuem se amando, mas sintam falta de mais atenção, admiração e conexão.</p>
+    <p class="ponte">A boa notícia é que não é preciso esperar uma crise para começar a cuidar do casamento.</p>
+    <p>Pequenas escolhas também podem abrir espaço para o amor na rotina.</p>
   </div>
 </div></section>
 
-<section class="texto papel"><div class="w">
+<!-- 03 · CONHEÇA O CONECTA ELA -->
+<section class="texto papel" id="conheca"><div class="w">
   <div class="rv">
     <p class="num">Provérbios 14:1</p>
     <h2>A mulher sábia edifica sua casa. <em>Mas como viver isso na prática?</em></h2>
   </div>
   <div class="corpo rv">
-    <p>Provérbios 14:1 nos lembra do valor da sabedoria na construção do lar.</p>
-    <p>Só que, entre conhecer esse princípio e colocá-lo em prática, existe a vida real.</p>
-    <p>Existem dias cansativos.</p>
-    <p>Conversas difíceis.</p>
-    <p>Diferenças de personalidade.</p>
-    <p>Preocupações.</p>
-    <p>Momentos em que demonstrar carinho não parece tão espontâneo quanto antes.</p>
-    <p>E é justamente nessa rotina que nossas escolhas ganham importância.</p>
-    <p>Edificar o casamento não significa ser perfeita.</p>
-    <p>Não significa concordar com tudo.</p>
-    <p>Muito menos assumir sozinha a responsabilidade de fazer o relacionamento dar certo.</p>
-    <p class="forte">Significa aprender a reconhecer o que está ao seu alcance e escolher cultivar o amor com sabedoria, verdade e intenção.</p>
+    <p>Conhecer esse princípio é uma coisa. Colocá-lo em prática, em meio aos dias cansativos e às conversas difíceis, é outra.</p>
+    <p>Edificar o casamento não significa ser perfeita, concordar com tudo ou assumir sozinha a responsabilidade pelo relacionamento.</p>
+    <p class="forte">Significa reconhecer o que está ao seu alcance e escolher agir com sabedoria, verdade e intenção.</p>
     <p class="ponte">Foi pensando nisso que nasceu o CONECTA ELA.</p>
-  </div>
-</div></section>
-
-<section class="texto" id="conheca"><div class="w">
-  <div class="rv">
-    <p class="num">Conheça o CONECTA ELA</p>
-    <h2>7 dias para edificar seu casamento <em>com sabedoria e intenção.</em></h2>
-  </div>
-  <div class="corpo rv">
-    <p>O CONECTA ELA é uma jornada devocional e prática criada para mulheres casadas que desejam fortalecer sua conexão com Deus e cultivar atitudes que contribuam para um relacionamento mais próximo, carinhoso e intencional.</p>
-    <p>Durante sete dias, você será convidada a olhar para situações comuns do casamento à luz da Palavra.</p>
-    <p>Cada dia apresenta uma reflexão, perguntas para sua realidade, uma atitude prática e uma oração.</p>
-    <p>Tudo pensado para ajudar você a transformar aquilo que aprende em pequenas escolhas dentro da sua rotina.</p>
-    <p class="forte">Sem fórmulas mágicas. Sem promessas de mudar seu marido. Sem a cobrança de ser uma esposa perfeita.</p>
-    <p>Apenas um caminho possível para começar a viver o casamento com mais consciência, fé e intenção.</p>
+    <p>Uma jornada devocional de sete dias que une a Palavra de Deus a situações reais da vida a dois.</p>
+    <p>A cada dia, você será convidada a refletir sobre seu casamento e experimentar uma atitude prática na rotina.</p>
+    <p>Sem fórmulas mágicas. Sem promessas de mudar seu marido. Sem a cobrança de ser uma esposa perfeita.</p>
+    <p class="forte">Um caminho para começar a cultivar o amor com mais consciência, fé e intenção.</p>
     <a class="btn btn-escuro" href="https://pay.hotmart.com/S107878528P?checkoutMode=10&src=venda-depois-texto" data-botao="depois-texto">Quero viver esses 7 dias <span>↘</span></a>
   </div>
 </div></section>
 
+<!-- 04 · A JORNADA DOS 7 DIAS -->
 <section class="dias" id="dias"><div class="w">
   <div class="rv">
     <p class="rot">A jornada</p>
-    <h2>O que você vai descobrir <em>durante os 7 dias</em></h2>
+    <h2>Sete dias. Sete reflexões. <em>Pequenas escolhas que podem fazer parte da sua rotina.</em></h2>
   </div>
   <ol>
-    <li class="rv"><small>Dia 01</small><h3>A escolha começa em mim</h3><span class="ref">Provérbios 14:1</span><p>Entenda como suas escolhas podem contribuir para a construção do relacionamento que você deseja cultivar, sem assumir responsabilidades que pertencem aos dois.</p></li>
-    <li class="rv"><small>Dia 02</small><h3>O poder das minhas palavras</h3><span class="ref">Provérbios 15:1</span><p>Reflita sobre a maneira como você se comunica e descubra o valor de escolher palavras que favoreçam o respeito e a aproximação, mesmo nas conversas difíceis.</p></li>
-    <li class="rv"><small>Dia 03</small><h3>Enxergar o homem que está ao meu lado</h3><span class="ref">Filipenses 2:4</span><p>Aprenda a olhar para seu marido com mais atenção, reconhecendo suas necessidades, qualidades e particularidades além das demandas da rotina.</p></li>
-    <li class="rv"><small>Dia 04</small><h3>Amar também é agir</h3><span class="ref">1 João 3:18</span><p>Perceba como o amor pode ser demonstrado em atitudes concretas, mesmo nos dias comuns, quando não há grandes acontecimentos.</p></li>
+    <li class="rv"><small>Dia 01</small><h3>A escolha começa em mim</h3><span class="ref">Provérbios 14:1</span><p>Reconheça como suas escolhas podem contribuir para o relacionamento, sem assumir responsabilidades que pertencem aos dois.</p></li>
+    <li class="rv"><small>Dia 02</small><h3>O poder das minhas palavras</h3><span class="ref">Provérbios 15:1</span><p>Reflita sobre sua comunicação e sobre como escolher palavras que favoreçam o respeito e a aproximação.</p></li>
+    <li class="rv"><small>Dia 03</small><h3>Enxergar o homem que está ao meu lado</h3><span class="ref">Filipenses 2:4</span><p>Olhe para seu marido com mais atenção, reconhecendo suas qualidades, necessidades e particularidades.</p></li>
+    <li class="rv"><small>Dia 04</small><h3>Amar também é agir</h3><span class="ref">1 João 3:18</span><p>Descubra como o amor pode ser demonstrado em atitudes concretas, mesmo nos dias mais comuns.</p></li>
     <li class="rv"><small>Dia 05</small><h3>Quando foi a última vez que você escolheu seu marido?</h3><span class="ref">Cântico dos Cânticos 4:1</span><p>Reflita sobre admiração, carinho e a importância de continuar demonstrando interesse por quem caminha ao seu lado.</p></li>
-    <li class="rv"><small>Dia 06</small><h3>O amor precisa de espaço</h3><span class="ref">Eclesiastes 3:1</span><p>Reconheça a importância de reservar tempo e atenção para o relacionamento em meio às responsabilidades do dia a dia.</p></li>
-    <li class="rv"><small>Dia 07</small><h3>Continuar escolhendo, todos os dias</h3><span class="ref">Colossenses 3:14</span><p>Reúna os aprendizados da jornada e descubra como transformar pequenas atitudes em escolhas que podem continuar fazendo parte da sua vida.</p></li>
+    <li class="rv"><small>Dia 06</small><h3>O amor precisa de espaço</h3><span class="ref">Eclesiastes 3:1</span><p>Reconheça a importância de reservar tempo e atenção para o relacionamento em meio às responsabilidades.</p></li>
+    <li class="rv"><small>Dia 07</small><h3>Continuar escolhendo, todos os dias</h3><span class="ref">Colossenses 3:14</span><p>Reúna os aprendizados e descubra como levar pequenas atitudes para além dos sete dias.</p></li>
   </ol>
 </div></section>
 
+<!-- 05 · COMO FUNCIONA NA PRÁTICA -->
 <section class="combinado"><div class="w">
   <div class="rv">
     <p class="num">Em cada dia</p>
-    <p class="ico" aria-hidden="true">↗</p>
     <h2><span>Não é apenas uma leitura.</span> <em>É um convite para sair do automático.</em></h2>
-    <p class="destaque">Em cada dia do CONECTA ELA, você encontrará:</p>
-    <p>Você não precisa reservar horas do seu dia nem mudar toda a sua rotina.</p>
-    <p class="destaque">Precisa apenas separar um momento para ler, refletir e escolher como deseja colocar aquele aprendizado em prática.</p>
+    <p class="destaque">Você não precisa reservar horas do seu dia.</p>
+    <p>Basta separar um momento para ler, refletir e escolher como colocar aquele aprendizado em prática.</p>
+    <img class="paginas" src="img/paginas-ela.jpg" alt="Páginas do CONECTA ELA: abertura do Dia 01, reflexão, escolha do dia e oração" width="1200" height="1000" loading="lazy">
   </div>
   <div class="folha" data-depth>
-    <p class="num"><span>Em cada dia</span><span>CONECTA ELA</span></p>
+    <p class="num"><span>Em cada dia do CONECTA ELA, você encontrará:</span></p>
     <ol>
-      <li><span><b>A Palavra de hoje</b>Um versículo bíblico para orientar a reflexão.</span></li>
-      <li><span><b>Reflexão e um olhar para a Palavra</b>Uma conversa próxima sobre situações reais do casamento e os princípios que podemos aprender nas Escrituras.</span></li>
-      <li><span><b>Olhe para sua rotina</b>Perguntas para ajudar você a reconhecer como aquele tema aparece em sua própria história.</span></li>
+      <li><span><b>A Palavra de hoje</b>Um versículo bíblico para orientar sua reflexão.</span></li>
+      <li><span><b>Reflexão e um olhar para a Palavra</b>Ensinamentos relacionados a situações reais do casamento.</span></li>
+      <li><span><b>Olhe para sua rotina</b>Perguntas para reconhecer como o tema aparece na sua própria história.</span></li>
       <li><span><b>Sua escolha de hoje</b>Uma atitude prática para experimentar no dia a dia.</span></li>
-      <li><span><b>Uma oração para hoje</b>Um momento para apresentar a Deus seus sentimentos, aprendizados e desejos.</span></li>
-      <li><span><b>Para guardar no coração</b>Uma mensagem para levar com você além da leitura.</span></li>
+      <li><span><b>Uma oração para hoje</b>Um momento para apresentar a Deus seus sentimentos e aprendizados.</span></li>
+      <li><span><b>Para guardar no coração</b>Uma mensagem para levar com você depois da leitura.</span></li>
     </ol>
   </div>
 </div></section>
 
+<!-- 06 · BÔNUS ESPECIAL -->
 <section class="bonus" id="bonus"><div class="w">
   <img class="capa-bonus rv" src="img/bonus-ela.png" alt="Capa do bônus Mulheres da Bíblia para te inspirar" width="1008" height="1428" loading="lazy">
   <div class="rv">
     <p class="num">E sua jornada não termina no sétimo dia</p>
-    <h3>Você também recebe um bônus especial:</h3>
+    <h3>Você também recebe um bônus especial.</h3>
     <h2>Mulheres da Bíblia <em>para te inspirar</em></h2>
-    <p class="apoio">5 histórias de fé, sabedoria e escolhas que podem transformar a maneira como você vive seu casamento.</p>
-    <p>Um material complementar para conhecer mulheres da Bíblia e refletir sobre como os princípios presentes em suas histórias podem inspirar suas atitudes na vida conjugal.</p>
-    <h3>Você vai aprender com:</h3>
+    <p class="apoio">5 histórias de fé, sabedoria e escolhas para refletir sobre sua vida conjugal.</p>
+    <p>Conheça princípios presentes nas histórias de mulheres da Bíblia e descubra como eles podem inspirar suas atitudes no casamento.</p>
     <ul class="mulheres">
-      <li><b>Rute — Lealdade e compromisso</b><span>O valor de cultivar integridade, confiança e constância nas pequenas escolhas.</span></li>
-      <li><b>Priscila — Parceria e propósito</b><span>A importância de construir uma caminhada em que marido e esposa reconheçam o valor um do outro.</span></li>
-      <li><b>Ana — Fé e perseverança</b><span>Como levar suas dores a Deus com sinceridade e cultivar espaço para o diálogo no casamento.</span></li>
-      <li><b>Sara — Confiança durante a caminhada</b><span>Uma reflexão sobre expectativas, incertezas e o cuidado com a relação enquanto os planos ainda não se realizaram.</span></li>
-      <li><b>Maria de Betânia — Presença e prioridades</b><span>O valor de reconhecer o que realmente importa e reservar atenção para Deus e para os relacionamentos que desejamos cultivar.</span></li>
+      <li><b>Rute — Lealdade e compromisso</b><span>Integridade, confiança e constância nas pequenas escolhas.</span></li>
+      <li><b>Priscila — Parceria e propósito</b><span>O valor de uma caminhada em que marido e esposa reconhecem a importância um do outro.</span></li>
+      <li><b>Ana — Fé e perseverança</b><span>Sinceridade diante de Deus e espaço para o diálogo.</span></li>
+      <li><b>Sara — Confiança durante a caminhada</b><span>Expectativas, incertezas e cuidado com o relacionamento.</span></li>
+      <li><b>Maria de Betânia — Presença e prioridades</b><span>A importância de reconhecer o que realmente merece nossa atenção.</span></li>
     </ul>
-    <p>Cada história traz reflexão, aplicação ao casamento, perguntas pessoais, uma atitude prática e uma oração.</p>
-    <p class="fecho-bonus">Um complemento para você continuar crescendo como mulher diante de Deus e levando esse crescimento para a sua vida a dois.</p>
+    <p>Cada história inclui reflexão, aplicação ao casamento, perguntas pessoais, uma atitude prática e uma oração.</p>
+    <p class="fecho-bonus">O bônus está incluído na sua compra, sem custo adicional.</p>
   </div>
 </div></section>
 
-<section class="texto"><div class="w">
-  <div class="rv">
-    <p class="num">Para quem é</p>
-    <h2>Para quem é o <em>CONECTA ELA?</em></h2>
-  </div>
-  <div class="corpo rv">
-    <p>Este devocional é para você que ama seu marido, mas percebe que a correria tem roubado espaço dos momentos de conexão.</p>
-    <p>Para você que deseja fortalecer seu casamento sem esperar que tudo esteja perfeito.</p>
-    <p>Para você que acredita que a Palavra de Deus pode orientar suas escolhas também dentro de casa.</p>
-    <p>Para você que quer demonstrar mais carinho, cultivar admiração, melhorar a comunicação e reservar tempo para a relação.</p>
-    <p>E também para você que vive um bom casamento, mas sabe que <b>aquilo que é precioso merece continuar sendo cuidado.</b></p>
-    <p class="forte">Você não precisa estar enfrentando uma crise para começar.</p>
-    <p>O CONECTA ELA foi pensado para o cuidado intencional do relacionamento no cotidiano. Ele não substitui aconselhamento ou ajuda especializada em situações de violência, abuso ou conflitos graves.</p>
-  </div>
-</div></section>
-
+<!-- 07 · QUEM SOMOS -->
 <section class="fecho quem">
   <img src="img/fernanda-leandro.jpg" alt="Leandro e Fernanda Miranda sorrindo juntos, com camisetas pretas, diante de um fundo verde" width="1086" height="1448" loading="lazy">
   <div class="rv">
-    <p class="num">Quem está por trás do CONECTA ELA?</p>
-    <h2>Prazer, somos <em>Os Mirandas ♡</em></h2>
+    <p class="num">Quem somos</p>
+    <h2>Prazer, somos <em>Os Mirandas. ♡</em></h2>
     <p>Somos Fernanda e Leandro.</p>
-    <p>Acreditamos que o casamento não é construído apenas nos grandes momentos, mas também nas escolhas que fazemos quando a vida está acontecendo de verdade.</p>
+    <p>Acreditamos que o casamento não é construído apenas nos grandes momentos, mas também nas escolhas que fazemos enquanto a vida acontece.</p>
     <p>Entre responsabilidades, diferenças, planos e rotina, aprendemos a valorizar a importância de continuar cuidando da nossa conexão.</p>
     <p>Foi desse desejo de olhar para o casamento com mais intenção que nasceu o CONECTA.</p>
-    <p>E o CONECTA ELA é um convite especial para mulheres que desejam viver essa jornada à luz da Palavra de Deus.</p>
-    <p>Não queremos apresentar um casamento perfeito.</p>
-    <p>Queremos compartilhar reflexões e práticas que incentivem escolhas mais conscientes, amorosas e sábias na vida a dois.</p>
-    <p class="assina">Com carinho, Fernanda e Leandro — Os Mirandas ♡</p>
+    <p>E o CONECTA ELA é um convite especial para mulheres que desejam cultivar sua vida a dois à luz da Palavra de Deus.</p>
+    <p class="destaque-quem">Não queremos apresentar um casamento perfeito.</p>
+    <p>Queremos compartilhar reflexões e práticas que incentivem escolhas mais conscientes, amorosas e sábias no dia a dia.</p>
+    <p>Com carinho,</p>
+    <p class="assina">Fernanda e Leandro — Os Mirandas ♡</p>
   </div>
 </section>
 
+<!-- 08 · OFERTA E GARANTIA -->
 <section class="texto"><div class="w">
   <div class="rv">
-    <p class="num">O momento ideal</p>
-    <h2>Seu casamento merece mais do que <em>o tempo que sobra.</em></h2>
+    <p class="num">Comece sua jornada hoje</p>
+    <h2>Seu casamento merece <em>ser cuidado hoje.</em></h2>
   </div>
   <div class="corpo rv">
     <p>Talvez você esteja esperando a rotina ficar mais tranquila.</p>
     <p>As responsabilidades diminuírem.</p>
     <p>O momento ideal chegar.</p>
-    <p>Mas a verdade é que a vida sempre terá alguma coisa pedindo sua atenção.</p>
-    <p>E, enquanto esperamos pelo momento perfeito, pequenas oportunidades de conexão podem passar despercebidas.</p>
-    <p>Você não precisa resolver tudo em sete dias.</p>
-    <p>Não precisa mudar a personalidade do seu marido.</p>
-    <p>Não precisa acertar em todas as escolhas.</p>
-    <p class="forte">Você só precisa estar disposta a começar com aquilo que está ao seu alcance.</p>
-    <p class="ponte">O CONECTA ELA foi criado para acompanhar você nesse começo.</p>
+    <p>Mas a vida sempre terá alguma coisa pedindo sua atenção.</p>
+    <p class="forte">Você não precisa resolver tudo em sete dias.</p>
+    <p>Nem mudar a personalidade do seu marido.</p>
+    <p>Nem acertar em todas as escolhas.</p>
+    <p class="ponte">Pode simplesmente começar com aquilo que está ao seu alcance.</p>
   </div>
 </div></section>
 
@@ -436,53 +420,55 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
     <img class="p1" src="img/capa-ela.jpg" alt="">
   </div>
   <div class="rv">
-    <p class="num">Comece sua jornada hoje</p>
-    <h2>CONECTA ELA</h2>
+    <p class="num">CONECTA ELA</p>
     <h3>Ao adquirir o CONECTA ELA, você recebe:</h3>
     <ul class="inclui">
-      <li><b>CONECTA ELA — Devocional digital de 7 dias</b>Uma jornada com reflexões bíblicas, perguntas, atitudes práticas e orações para cultivar sabedoria e intenção no casamento.</li>
+      <li><b>CONECTA ELA — Devocional digital de 7 dias</b>Reflexões bíblicas, perguntas pessoais, atitudes práticas e orações para cultivar sabedoria e intenção no casamento.</li>
       <li><b>BÔNUS — Mulheres da Bíblia para te inspirar</b>Cinco histórias bíblicas com reflexões e aplicações práticas para sua vida conjugal.</li>
-      <li><b>Tudo em formato digital</b>Para você acessar e realizar as leituras no seu próprio ritmo.</li>
+      <li><b>Acesso ao material digital</b>Para realizar as leituras no seu próprio ritmo.</li>
     </ul>
     <p class="investe">Seu investimento</p>
     <div class="compra">
-      <p class="preco"><b>R$ 37,00</b></p>
+      <p class="preco"><b>R$ 37,00</b><span>Pagamento único.</span></p>
       <a class="btn" href="https://pay.hotmart.com/S107878528P?checkoutMode=10&src=venda-oferta" data-botao="oferta">Sim, quero meu CONECTA ELA <span>↘</span></a>
     </div>
     <p class="seguro">Compra segura pela Hotmart · Garantia de 7 dias</p>
     <div class="garantia">
-      <p class="g-tit">Garantia de 7 dias</p>
-      <p class="g-lead">Você pode começar sua jornada com tranquilidade.</p>
-      <p>Se, em até 7 dias após a compra, sentir que o CONECTA ELA não é para você, basta pedir o reembolso pela Hotmart. Devolvemos 100% do valor, sem precisar justificar.</p>
+      <p class="g-tit">Você tem 7 dias de garantia.</p>
+      <p>Se, dentro desse prazo, sentir que o CONECTA ELA não é para você, basta solicitar o reembolso pela Hotmart.</p>
+      <p class="g-lead">Você recebe 100% do valor pago de volta, sem precisar justificar.</p>
     </div>
   </div>
 </div></section>
 
+<!-- 09 · DÚVIDAS FREQUENTES E CONVITE FINAL -->
 <section class="faq"><div class="w">
   <div class="rv">
     <p class="num">Perguntas frequentes</p>
     <h2>Antes de começar.</h2>
   </div>
   <dl>
-    <div><dt>Preciso fazer os sete dias seguidos?</dt><dd>Não. A proposta é uma jornada de sete dias, mas você pode seguir no seu ritmo. Se perder um dia, basta retomar quando puder.</dd></div>
-    <div><dt>Meu marido precisa participar?</dt><dd>Não. O CONECTA ELA foi desenvolvido para a mulher realizar individualmente. Algumas reflexões e atitudes podem abrir espaço para momentos compartilhados, mas a participação dele não é obrigatória.</dd></div>
-    <div><dt>O devocional é indicado apenas para casamentos em crise?</dt><dd>Não. Ele também é para mulheres que vivem um relacionamento saudável e desejam continuar cultivando conexão, carinho e intencionalidade.</dd></div>
+    <div><dt>Preciso fazer os sete dias seguidos?</dt><dd>Não. Você pode acompanhar a jornada no seu ritmo e retomar quando puder.</dd></div>
+    <div><dt>Meu marido precisa participar?</dt><dd>Não. O CONECTA ELA foi desenvolvido para a mulher realizar individualmente. A participação dele não é obrigatória.</dd></div>
+    <div><dt>O devocional é indicado apenas para casamentos em crise?</dt><dd>Não. Também é para mulheres que vivem um relacionamento saudável e desejam continuar cultivando conexão, carinho e intencionalidade.</dd></div>
     <div><dt>O CONECTA ELA é um curso em vídeo?</dt><dd>Não. É um material digital de leitura e reflexão, com propostas práticas e espaços para registrar suas respostas.</dd></div>
-    <div><dt>Preciso ter muito conhecimento da Bíblia?</dt><dd>Não. As reflexões foram escritas em uma linguagem acessível e apresentam referências bíblicas para acompanhar cada tema.</dd></div>
-    <div><dt>E se eu comprar e sentir que não é para mim?</dt><dd>Você tem 7 dias de garantia. Se, nesse prazo, perceber que o CONECTA ELA não faz sentido para você, é só pedir o reembolso pela Hotmart, e o valor é devolvido integralmente.</dd></div>
+    <div><dt>Preciso ter muito conhecimento da Bíblia?</dt><dd>Não. As reflexões utilizam linguagem acessível e apresentam referências bíblicas.</dd></div>
     <div><dt>O CONECTA ELA garante mudanças no meu casamento?</dt><dd>Nenhum material pode garantir mudanças no comportamento de outra pessoa ou resultados específicos em um relacionamento.</dd><dd>O propósito do devocional é ajudar você a refletir, fortalecer sua caminhada com Deus e cultivar atitudes intencionais dentro daquilo que está ao seu alcance.</dd></div>
+    <div><dt>E se eu comprar e sentir que não é para mim?</dt><dd>Você tem sete dias para solicitar o reembolso pela Hotmart.</dd></div>
   </dl>
+  <p class="aviso">O CONECTA ELA foi pensado para o cuidado intencional do relacionamento no cotidiano. Ele não substitui aconselhamento ou ajuda especializada em situações de violência, abuso ou conflitos graves.</p>
 </div></section>
 
 <section class="fecho">
   <img src="img/maos-dadas.jpg" alt="Mãos de um casal entrelaçadas sobre a mesa, ao lado de uma xícara de café" width="1036" height="777" loading="lazy">
   <div class="rv">
-    <p class="num">CONECTA ELA</p>
     <h2>O amor também se cultiva <em>nas pequenas escolhas.</em></h2>
     <p>Você pode continuar esperando uma ocasião especial para dedicar mais atenção ao seu casamento.</p>
     <p>Ou pode decidir que hoje já é um bom dia para começar.</p>
     <p class="assina">O casamento é uma construção compartilhada. Mas, se você pode escolher dar o primeiro passo, por que esperar?</p>
+    <p class="nome-final">CONECTA ELA</p>
     <h3>7 dias para edificar seu casamento com sabedoria e intenção.</h3>
+    <p class="preco-final">R$ 37,00</p>
     <a class="btn btn-escuro" href="https://pay.hotmart.com/S107878528P?checkoutMode=10&src=venda-final" data-botao="final">Quero começar agora <span>↘</span></a>
     <p><em>Uma jornada devocional e prática de Os Mirandas ♡</em></p>
   </div>
@@ -490,9 +476,16 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--salvia);outline-offse
 </main>
 
 <footer class="rodape"><div class="w">
-  <span><a href="#inicio">Os Mirandas</a> · Casamento &amp; Rotina</span>
-  <span>Instagram <a href="https://instagram.com/osmiirandas">@osmiirandas</a></span>
+  <div>
+    <p class="rod-marca">Os Mirandas | Casamento &amp; Rotina</p>
+    <p><em>O amor mora nas pequenas escolhas. ♡</em></p>
+  </div>
+  <div class="rod-dir">
+    <p><a href="https://tally.so/r/J9aJYJ">Política de Privacidade</a> · <a href="https://wa.me/5521966428636?text=Oi!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20CONECTA%20ELA.">Canal de contato</a></p>
+    <p>© 2026 Os Mirandas. Todos os direitos reservados.</p>
+  </div>
 </div></footer>
+
 <div class="fixo"><a class="btn" href="https://pay.hotmart.com/S107878528P?checkoutMode=10&src=venda-fixo-celular" data-botao="fixo-celular">Quero começar minha jornada <span>↘</span></a></div>
 
 <script>

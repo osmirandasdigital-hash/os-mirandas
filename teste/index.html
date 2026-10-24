@@ -182,7 +182,11 @@ if (!x) {
     ${FORMY_URL ? `<a class="refazer" href="${FORMY_URL}">Refazer o teste</a>` : ''}`;
   fbq('trackCustom', 'ReflexaoTeste', { reflexao: r.toUpperCase() });
   document.querySelectorAll('[data-produto]').forEach(a => a.addEventListener('click', () =>
-    fbq('track', 'InitiateCheckout', { content_name: a.dataset.produto, value: 37, currency: 'BRL', botao: `teste-${r}` })));
+  {
+    const d = { content_name: a.dataset.produto, value: 37, currency: 'BRL', botao: `teste-${r}` };
+    fbq('track', 'InitiateCheckout', d);
+    fbq('trackCustom', 'CliqueComprar', d);
+  }));
 }
 </script>
 </html>

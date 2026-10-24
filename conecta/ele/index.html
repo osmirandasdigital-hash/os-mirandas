@@ -8,11 +8,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap">
-<!-- Meta Pixel "Dados" (2898104873714319): conta visitas à página (PageView) e cliques nos botões de compra (InitiateCheckout, com o nome do botão) -->
+<!-- Meta Pixel "Dados" (2898104873714319): conta visitas à página (PageView) e cliques nos botões de compra (InitiateCheckout + CliqueComprar, com o nome do botão; o evento padrão não estava chegando ao Meta, o personalizado chega) -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','2898104873714319');fbq('track','PageView');
-document.addEventListener('click',function(e){var a=e.target.closest('a[data-botao]');if(a)fbq('track','InitiateCheckout',{content_name:'CONECTA ELE',value:37,currency:'BRL',botao:a.dataset.botao});});
+document.addEventListener('click',function(e){var a=e.target.closest('a[data-botao]');if(a){var d={content_name:'CONECTA ELE',value:37,currency:'BRL',botao:a.dataset.botao};fbq('track','InitiateCheckout',d);fbq('trackCustom','CliqueComprar',d);}});
 </script>
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=2898104873714319&ev=PageView&noscript=1"></noscript>
 <style>

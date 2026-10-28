@@ -77,9 +77,11 @@ h3{font:600 12px/1.4 var(--f-disp);letter-spacing:.2em;text-transform:uppercase;
 <main id="conteudo"></main>
 
 <script>
-const LINK_ELA = n => `https://pay.hotmart.com/S107878528P?checkoutMode=10&src=quiz-resultado${n}`;
-const LINK_ELE = n => `https://pay.hotmart.com/I108145918V?checkoutMode=10&src=quiz-resultado${n}`;
-const BONUS = 'Inclui o bônus <b>Homens da Bíblia — 5 lições de fé, caráter e atitude para fortalecer seu casamento</b>.';
+// os botões levam para as páginas de venda (não direto ao checkout)
+const LINK_ELA = 'https://osmirandasdigital-hash.github.io/os-mirandas/conecta/venda/?utm_source=quiz';
+const LINK_ELE = 'https://osmirandasdigital-hash.github.io/os-mirandas/conecta/ele/?utm_source=quiz';
+const BONUS_ELA = 'Inclui o bônus <b>Mulheres da Bíblia — 5 histórias de fé, sabedoria e escolhas para fortalecer seu casamento</b>.';
+const BONUS_ELE = 'Inclui o bônus <b>Homens da Bíblia — 5 lições de fé, caráter e atitude para fortalecer seu casamento</b>.';
 
 const REFLEXOES = {
   a: { n: 1, titulo: 'A conexão está pedindo espaço',
@@ -165,15 +167,16 @@ if (!x) {
           <h4>CONECTA ELA</h4>
           <span class="preco">R$ 37</span>
           <p>${x.ela}</p>
-          <a class="btn" data-produto="CONECTA ELA" href="${LINK_ELA(x.n)}">QUERO CONHECER O CONECTA ELA →</a>
+          <p>${BONUS_ELA}</p>
+          <a class="btn" data-produto="CONECTA ELA" href="${LINK_ELA}">QUERO CONHECER O CONECTA ELA →</a>
         </article>
         <article class="produto">
           <img src="img/capa-ele.png" alt="Capa do CONECTA ELE" width="400" height="600">
           <h4>CONECTA ELE</h4>
           <span class="preco">R$ 37</span>
           <p>${x.ele}</p>
-          <p>${BONUS}</p>
-          <a class="btn" data-produto="CONECTA ELE" href="${LINK_ELE(x.n)}">QUERO CONHECER O CONECTA ELE →</a>
+          <p>${BONUS_ELE}</p>
+          <a class="btn" data-produto="CONECTA ELE" href="${LINK_ELE}">QUERO CONHECER O CONECTA ELE →</a>
         </article>
       </div>
       <p class="fecho">♡ O amor mora nas pequenas escolhas.</p>

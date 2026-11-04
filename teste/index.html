@@ -165,7 +165,7 @@ if (!x) {
         <article class="produto">
           <img src="img/capa-ela.jpg" alt="Capa do CONECTA ELA" width="400" height="600">
           <h4>CONECTA ELA</h4>
-          <span class="preco">R$ 37</span>
+          <span class="preco">R$ 19,90</span>
           <p>${x.ela}</p>
           <p>${BONUS_ELA}</p>
           <a class="btn" data-produto="CONECTA ELA" href="${LINK_ELA}">QUERO CONHECER O CONECTA ELA →</a>
@@ -173,7 +173,7 @@ if (!x) {
         <article class="produto">
           <img src="img/capa-ele.png" alt="Capa do CONECTA ELE" width="400" height="600">
           <h4>CONECTA ELE</h4>
-          <span class="preco">R$ 37</span>
+          <span class="preco">R$ 19,90</span>
           <p>${x.ele}</p>
           <p>${BONUS_ELE}</p>
           <a class="btn" data-produto="CONECTA ELE" href="${LINK_ELE}">QUERO CONHECER O CONECTA ELE →</a>
@@ -186,7 +186,7 @@ if (!x) {
   fbq('trackCustom', 'ReflexaoTeste', { reflexao: r.toUpperCase() });
   document.querySelectorAll('[data-produto]').forEach(a => a.addEventListener('click', () =>
   {
-    const d = { content_name: a.dataset.produto, value: 37, currency: 'BRL', botao: `teste-${r}` };
+    const d = { content_name: a.dataset.produto, value: 19.9, currency: 'BRL', botao: `teste-${r}` };
     fbq('track', 'InitiateCheckout', d);
     fbq('trackCustom', 'CliqueComprar', d);
   }));
